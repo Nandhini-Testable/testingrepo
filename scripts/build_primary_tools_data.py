@@ -115,6 +115,15 @@ def build() -> dict:
     (OUT_DIR / "manifest.json").write_text(manifest_text, encoding="utf-8")
     (PKG_DIR / "manifest.json").write_text(manifest_text, encoding="utf-8")
 
+    import sys
+
+    scripts_dir = Path(__file__).resolve().parent
+    if str(scripts_dir) not in sys.path:
+        sys.path.insert(0, str(scripts_dir))
+    from enrich_primary_tools import enrich  # noqa: WPS433
+
+    enrich()
+
     return manifest
 
 

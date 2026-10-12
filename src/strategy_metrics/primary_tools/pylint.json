@@ -282,5 +282,16 @@
         "derivation": "dead_data_count = unused_variable + unused_import"
       }
     }
-  ]
+  ],
+  "primary_tool_data": {
+    "pip_packages": [
+      "pylint"
+    ],
+    "s3_runner_folders": [
+      "pylint"
+    ],
+    "artifact_globs": [
+      "**/pylint.json"
+    ]
+  }
 }

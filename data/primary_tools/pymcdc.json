@@ -29,5 +29,16 @@
         "derivation": "condition_coverage = covered_mcdc_conditions / max(total_mcdc_conditions, 1)"
       }
     }
-  ]
+  ],
+  "primary_tool_data": {
+    "pip_packages": [
+      "pymcdc"
+    ],
+    "s3_runner_folders": [
+      "pymcdc"
+    ],
+    "artifact_globs": [
+      "**/pymcdc.json"
+    ]
+  }
 }

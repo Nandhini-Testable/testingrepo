@@ -135,5 +135,16 @@
         "derivation": "side_effect_scope = sum(len(file.changed_methods) for file in modified_files)"
       }
     }
-  ]
+  ],
+  "primary_tool_data": {
+    "pip_packages": [
+      "pydriller"
+    ],
+    "s3_runner_folders": [
+      "pydriller"
+    ],
+    "artifact_globs": [
+      "**/pydriller.json"
+    ]
+  }
 }

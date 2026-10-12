@@ -218,5 +218,21 @@
         "derivation": "all_uses_coverage_percent = (\n    len([d for d in definitions if d.user_count > 0]) / len(definitions)\n) * 100"
       }
     }
-  ]
+  ],
+  "primary_tool_data": {
+    "pip_packages": [
+      "coverage",
+      "beniget"
+    ],
+    "s3_runner_folders": [
+      "coverage-py",
+      "py-all-defs-uses",
+      "py-coverage-delta"
+    ],
+    "artifact_globs": [
+      "**/coverage.json",
+      "**/defs_uses.json"
+    ],
+    "notes": "Combined primary in workbook; needs coverage + def-use analysis."
+  }
 }

@@ -29,5 +29,26 @@
         "derivation": "test_execution_efficiency = tests_saved / max(tests_all, 1)"
       }
     }
-  ]
+  ],
+  "primary_tool_data": {
+    "pip_packages": [
+      "testmon"
+    ],
+    "s3_runner_folders": [
+      "testmon",
+      "py-coverage-delta"
+    ],
+    "artifact_globs": [
+      "**/testmon.json",
+      "**/coverage_delta.json"
+    ],
+    "notes": "Testmon often paired with coverage delta for test selection metrics.",
+    "example_apply": {
+      "metric_id": "structural_analysis_cyclomatic_complexity_qa_resource_allocation",
+      "variables": {
+        "tests_saved": 40,
+        "tests_all": 100
+      }
+    }
+  }
 }

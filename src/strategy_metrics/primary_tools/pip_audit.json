@@ -176,5 +176,16 @@
         "derivation": "Version Lag =  count(vulnerabilities with fix_versions)"
       }
     }
-  ]
+  ],
+  "primary_tool_data": {
+    "pip_packages": [
+      "pip-audit"
+    ],
+    "s3_runner_folders": [
+      "pip-audit"
+    ],
+    "artifact_globs": [
+      "**/pip_audit.json"
+    ]
+  }
 }

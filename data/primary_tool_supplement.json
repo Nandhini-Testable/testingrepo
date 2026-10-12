@@ -1,0 +1,113 @@
+{
+  "version": "1",
+  "description": "Operational metadata per workbook Python primary (runners, artifacts, examples). Workbook metric rows remain authoritative in each bundle.",
+  "tools": {
+    "beniget": {
+      "pip_packages": ["beniget"],
+      "s3_runner_folders": ["py-all-defs-uses", "beniget"],
+      "artifact_globs": ["**/defs_uses.json"],
+      "example_metric_id": "data_flow_testing_all_definition_coverage_all_defs_coverage",
+      "example_variables": {
+        "used_definitions": 80,
+        "definitions": 100
+      }
+    },
+    "cognitive_ast": {
+      "pip_packages": ["cognitive-complexity"],
+      "s3_runner_folders": ["cognitive-ast"],
+      "artifact_globs": ["**/cognitive_ast.json"]
+    },
+    "cosmic_ray": {
+      "pip_packages": ["cosmic-ray"],
+      "s3_runner_folders": ["cosmic-ray"],
+      "artifact_globs": ["**/cosmic_ray.json"]
+    },
+    "coverage_dot_py__coverage_py": {
+      "pip_packages": ["coverage"],
+      "s3_runner_folders": ["coverage-py", "py-coverage-delta"],
+      "artifact_globs": ["**/coverage.json", "**/coverage_delta.json"],
+      "shared_artifacts": ["_shared/coverage.json"],
+      "example_metric_id": "structural_analysis_cyclomatic_complexity_decision_outcome_verification",
+      "example_variables": {
+        "covered_branches": 8,
+        "num_branches": 10
+      }
+    },
+    "coverage_dot_py": {
+      "pip_packages": ["coverage"],
+      "s3_runner_folders": ["coverage-py"],
+      "artifact_globs": ["**/coverage.json"]
+    },
+    "coverage_dot_py_beniget": {
+      "pip_packages": ["coverage", "beniget"],
+      "s3_runner_folders": ["coverage-py", "py-all-defs-uses", "py-coverage-delta"],
+      "artifact_globs": ["**/coverage.json", "**/defs_uses.json"],
+      "notes": "Combined primary in workbook; needs coverage + def-use analysis."
+    },
+    "crosshair": {
+      "pip_packages": ["crosshair-tool"],
+      "s3_runner_folders": ["crosshair"],
+      "artifact_globs": ["**/crosshair.json"],
+      "example_variables": {
+        "functions_without_counterexample": 1,
+        "total_functions_checked": 1
+      }
+    },
+    "crosshair__crosshair": {
+      "pip_packages": ["crosshair-tool"],
+      "s3_runner_folders": ["crosshair"],
+      "artifact_globs": ["**/crosshair.json"],
+      "example_variables": {
+        "functions_with_counterexample": 0,
+        "total_functions_checked": 10
+      }
+    },
+    "jscpd": {
+      "pip_packages": ["jscpd"],
+      "s3_runner_folders": ["jscpd-py", "jscpd"],
+      "artifact_globs": ["**/jscpd-report.json"]
+    },
+    "pip_audit": {
+      "pip_packages": ["pip-audit"],
+      "s3_runner_folders": ["pip-audit"],
+      "artifact_globs": ["**/pip_audit.json"]
+    },
+    "pydriller": {
+      "pip_packages": ["pydriller"],
+      "s3_runner_folders": ["pydriller"],
+      "artifact_globs": ["**/pydriller.json"]
+    },
+    "pylint": {
+      "pip_packages": ["pylint"],
+      "s3_runner_folders": ["pylint"],
+      "artifact_globs": ["**/pylint.json"]
+    },
+    "pymcdc": {
+      "pip_packages": ["pymcdc"],
+      "s3_runner_folders": ["pymcdc"],
+      "artifact_globs": ["**/pymcdc.json"]
+    },
+    "radon_lizard": {
+      "pip_packages": ["radon", "lizard"],
+      "s3_runner_folders": ["radon", "lizard"],
+      "artifact_globs": ["**/radon_cc.json", "**/lizard.json"],
+      "notes": "Workbook lists single primary Radon/Lizard; runners are separate."
+    },
+    "semgrep_oss_bandit": {
+      "pip_packages": ["semgrep", "bandit"],
+      "s3_runner_folders": ["semgrep", "bandit"],
+      "artifact_globs": ["**/semgrep.json", "**/bandit.json"]
+    },
+    "testmon": {
+      "pip_packages": ["testmon"],
+      "s3_runner_folders": ["testmon", "py-coverage-delta"],
+      "artifact_globs": ["**/testmon.json", "**/coverage_delta.json"],
+      "example_metric_id": "structural_analysis_cyclomatic_complexity_qa_resource_allocation",
+      "example_variables": {
+        "tests_saved": 40,
+        "tests_all": 100
+      },
+      "notes": "Testmon often paired with coverage delta for test selection metrics."
+    }
+  }
+}

@@ -14,6 +14,9 @@ def test_primary_tool_bundles_cover_workbook() -> None:
     beniget = load_primary_tool_bundle(primary_tool="Beniget")
     assert beniget["metric_count"] == 2
     assert all(m["python"]["primary_tool"] == "Beniget" for m in beniget["metrics"])
+    ptd = beniget.get("primary_tool_data") or {}
+    assert "py-all-defs-uses" in ptd.get("s3_runner_folders", [])
+    assert ptd.get("example_apply", {}).get("variables")
 
 
 def test_catalog_has_python_primary_tools() -> None:

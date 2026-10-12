@@ -155,5 +155,16 @@
         "derivation": "cc - cognitive complexity value\nCognitive Load Score = cc * 5"
       }
     }
-  ]
+  ],
+  "primary_tool_data": {
+    "pip_packages": [
+      "cognitive-complexity"
+    ],
+    "s3_runner_folders": [
+      "cognitive-ast"
+    ],
+    "artifact_globs": [
+      "**/cognitive_ast.json"
+    ]
+  }
 }

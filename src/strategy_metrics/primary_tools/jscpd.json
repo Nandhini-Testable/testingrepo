@@ -155,5 +155,17 @@
         "derivation": "Lines in SYNC fragment / Lines in ASYNC fragment"
       }
     }
-  ]
+  ],
+  "primary_tool_data": {
+    "pip_packages": [
+      "jscpd"
+    ],
+    "s3_runner_folders": [
+      "jscpd-py",
+      "jscpd"
+    ],
+    "artifact_globs": [
+      "**/jscpd-report.json"
+    ]
+  }
 }

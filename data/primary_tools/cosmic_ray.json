@@ -155,5 +155,16 @@
         "derivation": "Mutation Score =\n(K / M) * 100"
       }
     }
-  ]
+  ],
+  "primary_tool_data": {
+    "pip_packages": [
+      "cosmic-ray"
+    ],
+    "s3_runner_folders": [
+      "cosmic-ray"
+    ],
+    "artifact_globs": [
+      "**/cosmic_ray.json"
+    ]
+  }
 }

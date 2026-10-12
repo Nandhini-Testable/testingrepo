@@ -29,5 +29,20 @@
         "derivation": "boundary_issue_ratio = (\n    functions_with_counterexample / max(total_functions_checked, 1)\n)"
       }
     }
-  ]
+  ],
+  "primary_tool_data": {
+    "pip_packages": [
+      "crosshair-tool"
+    ],
+    "s3_runner_folders": [
+      "crosshair"
+    ],
+    "artifact_globs": [
+      "**/crosshair.json"
+    ],
+    "example_variables_hint": {
+      "functions_with_counterexample": 0,
+      "total_functions_checked": 10
+    }
+  }
 }

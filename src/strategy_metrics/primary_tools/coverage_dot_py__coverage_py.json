@@ -622,5 +622,28 @@
         "derivation": "Quality Improvement =\n(Coverage Delta % + Branch Delta %) / 2"
       }
     }
-  ]
+  ],
+  "primary_tool_data": {
+    "pip_packages": [
+      "coverage"
+    ],
+    "s3_runner_folders": [
+      "coverage-py",
+      "py-coverage-delta"
+    ],
+    "artifact_globs": [
+      "**/coverage.json",
+      "**/coverage_delta.json"
+    ],
+    "shared_artifacts": [
+      "_shared/coverage.json"
+    ],
+    "example_apply": {
+      "metric_id": "structural_analysis_cyclomatic_complexity_decision_outcome_verification",
+      "variables": {
+        "covered_branches": 8,
+        "num_branches": 10
+      }
+    }
+  }
 }

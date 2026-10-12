@@ -50,5 +50,24 @@
         "derivation": "du_path_validation = covered_lines / max(num_statements, 1)"
       }
     }
-  ]
+  ],
+  "primary_tool_data": {
+    "pip_packages": [
+      "beniget"
+    ],
+    "s3_runner_folders": [
+      "py-all-defs-uses",
+      "beniget"
+    ],
+    "artifact_globs": [
+      "**/defs_uses.json"
+    ],
+    "example_apply": {
+      "metric_id": "data_flow_testing_all_definition_coverage_all_defs_coverage",
+      "variables": {
+        "used_definitions": 80,
+        "definitions": 100
+      }
+    }
+  }
 }

@@ -29,5 +29,20 @@
         "derivation": "technical_debt = sum(ccn_values)"
       }
     }
-  ]
+  ],
+  "primary_tool_data": {
+    "pip_packages": [
+      "radon",
+      "lizard"
+    ],
+    "s3_runner_folders": [
+      "radon",
+      "lizard"
+    ],
+    "artifact_globs": [
+      "**/radon_cc.json",
+      "**/lizard.json"
+    ],
+    "notes": "Workbook lists single primary Radon/Lizard; runners are separate."
+  }
 }

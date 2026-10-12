@@ -50,5 +50,20 @@
         "derivation": "logical_combinatorial_coverage = (\n    functions_without_counterexample / max(total_functions_checked, 1)\n)"
       }
     }
-  ]
+  ],
+  "primary_tool_data": {
+    "pip_packages": [
+      "crosshair-tool"
+    ],
+    "s3_runner_folders": [
+      "crosshair"
+    ],
+    "artifact_globs": [
+      "**/crosshair.json"
+    ],
+    "example_variables_hint": {
+      "functions_without_counterexample": 1,
+      "total_functions_checked": 1
+    }
+  }
 }

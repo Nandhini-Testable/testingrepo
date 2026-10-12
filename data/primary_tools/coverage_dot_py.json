@@ -29,5 +29,16 @@
         "derivation": "data_path_correlation = used_definitions / max(definitions, 1)"
       }
     }
-  ]
+  ],
+  "primary_tool_data": {
+    "pip_packages": [
+      "coverage"
+    ],
+    "s3_runner_folders": [
+      "coverage-py"
+    ],
+    "artifact_globs": [
+      "**/coverage.json"
+    ]
+  }
 }

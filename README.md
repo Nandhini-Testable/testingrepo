@@ -6,6 +6,7 @@ It ships:
 
 - **103 White Box metrics** with **Python primary/secondary tools**, sheet derivations, thresholds, and 0–100 normalization text (`data/python_metrics.json`).
 - **16 primary-tool bundles** — full metric rows per workbook primary name (`data/primary_tools/*.json`, index in `data/primary_tools/manifest.json`).
+- **`primary_tool_data`** on each bundle — pip packages, typical S3 runner folders, artifact names, and example `strategy-metrics apply` inputs (`data/primary_tool_supplement.json`).
 - A small **derivation engine** that evaluates workbook formulas when you supply raw inputs.
 
 ## Requirements
@@ -31,6 +32,7 @@ Rebuild primary-tool files only (after editing the catalog JSON):
 
 ```bash
 python scripts/build_primary_tools_data.py
+python scripts/enrich_primary_tools.py
 ```
 
 ## CLI

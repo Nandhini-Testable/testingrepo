@@ -156,5 +156,19 @@
         "derivation": "Exploit Surface =\nSemgrep ERROR + Semgrep WARNING\n+ Bandit HIGH + Bandit MEDIUM"
       }
     }
-  ]
+  ],
+  "primary_tool_data": {
+    "pip_packages": [
+      "semgrep",
+      "bandit"
+    ],
+    "s3_runner_folders": [
+      "semgrep",
+      "bandit"
+    ],
+    "artifact_globs": [
+      "**/semgrep.json",
+      "**/bandit.json"
+    ]
+  }
 }
