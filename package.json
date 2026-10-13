@@ -1,7 +1,7 @@
 {
   "name": "granite-mill",
   "version": "1.0.0",
-  "description": "GraniteMill -- Community garden plots (TS_V20_VITE_NPM_MONO)",
+  "description": "GraniteMill -- Community garden plots (TS_V20_VITE_NPM_MONO_ALL_TOOLS)",
   "private": true,
   "main": "src/index.ts",
   "engines": {
