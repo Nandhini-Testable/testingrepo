@@ -1,0 +1,12 @@
+crosshair	RAN	exit 0
+coverage	RAN	exit 0
+pymcdc	RAN	exit 0
+radon	RAN	exit 0
+lizard	RAN	exit 1 (findings present -- expected)
+testmon	RAN	exit 0
+jscpd	RAN	exit 0
+pylint	RAN	exit 30 (findings present -- expected)
+semgrep	RAN	exit 1 (findings present -- expected)
+bandit	RAN	exit 1 (findings present -- expected)
+pip-audit	RAN	exit 1 (findings present -- expected)
+cosmic-ray	RAN	exit 0

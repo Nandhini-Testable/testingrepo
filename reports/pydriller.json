@@ -1,0 +1,58 @@
+{
+  "authors": {
+    "Adaeze Okonkwo": 7,
+    "Claude Sonnet 5": 4,
+    "Claude Sonnet 5.5": 1,
+    "Cursor": 1,
+    "Meera Balasubramanian": 9,
+    "Prajith Kumaravel": 46,
+    "Prajith19": 4,
+    "Tomas Lindqvist": 7,
+    "prajithtestable": 4,
+    "python-corpus-fix": 1
+  },
+  "commits": 55,
+  "tool": "PyDriller",
+  "top_churn": [
+    [
+      ".github\\workflows\\ci.yml",
+      5
+    ],
+    [
+      "README.md",
+      5
+    ],
+    [
+      "src\\orderlab\\services\\pricing_rules.py",
+      3
+    ],
+    [
+      "src\\orderlab\\services\\retail_order_processor.py",
+      3
+    ],
+    [
+      "src\\orderlab\\services\\wholesale_order_processor.py",
+      3
+    ],
+    [
+      "tools\\radon\\run_radon.sh",
+      3
+    ],
+    [
+      "tools\\coverage\\run_coverage.sh",
+      3
+    ],
+    [
+      "tools\\pylint\\run_pylint.sh",
+      3
+    ],
+    [
+      "tools\\ruff\\run_ruff.sh",
+      3
+    ],
+    [
+      "tools\\vulture\\run_vulture.sh",
+      3
+    ]
+  ]
+}

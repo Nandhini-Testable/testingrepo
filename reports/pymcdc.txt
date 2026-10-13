@@ -1,0 +1,41 @@
+Line number: (65, 7)
+Decision: customs_value > 1000 and region != "US"
+Combinations to be covered: 
+    | Result.   customs_value > 1000    region != "US"   Cover. 
+----------------------------------------------------------------
+  1 |  False            True                False        False  
+  2 |  False           False                 ----        False  
+  3 |   True            True                 True        False  
+
+Line number: (67, 7)
+Decision: promo and promo.upper() == "FREESHIP" and not hazardous
+Combinations to be covered: 
+    | Result.   promo    promo.upper() == "FREESHIP"    hazardous   Cover. 
+---------------------------------------------------------------------------
+  1 |  False    True                False                 False     False  
+  2 |  False    False               ----                  False     False  
+  3 |   True    True                True                  False     False  
+  4 |  False    True                True                  True      False  
+
+Line number: (69, 7)
+Decision: destination_zone > 6 and band != "freight"
+Combinations to be covered: 
+    | Result.   destination_zone > 6    band != "freight"   Cover. 
+-------------------------------------------------------------------
+  1 |  False            True                  False         False  
+  2 |  False           False                  ----          False  
+  3 |   True            True                  True          False  
+
+Line number: (81, 11)
+Decision: minimum is not None and value < minimum
+Combinations to be covered: 
+    | Result.   minimum is not None    value < minimum   Cover. 
+----------------------------------------------------------------
+  1 |  False           True                 False        False  
+  2 |  False           False                ----         False  
+  3 |   True           True                 True         False  
+
+
+Covered 0 out of 13 requirements in 4 decisions (0%)
+	      
+Run time: 0.00310 

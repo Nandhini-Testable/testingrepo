@@ -4,6 +4,7 @@
   python "Tool Triggering (Synthetic Data)/tool_integration.py"            banner
   python "Tool Triggering (Synthetic Data)/tool_integration.py" --verify   check every tool is wired
   python "Tool Triggering (Synthetic Data)/tool_integration.py" --run      run every tool, honouring skips
+  python "Tool Triggering (Synthetic Data)/tool_integration.py" --run-primary  primary tools only
 
 Exit codes from a --run mirror the runners' own contract:
 
@@ -23,6 +24,7 @@ from __future__ import print_function
 import argparse
 import json
 import os
+import shutil
 import subprocess
 import sys
 
@@ -96,6 +98,29 @@ def load_dataset():
         return json.load(handle)
 
 
+def _bash_executable():
+    """Prefer Git Bash on Windows; WSL /bin/bash cannot run paths with spaces."""
+    env_bash = os.environ.get("BASH")
+    if env_bash and os.path.isfile(env_bash):
+        return env_bash
+    if os.name == "nt":
+        for cand in (
+            r"C:\Program Files\Git\bin\bash.exe",
+            r"C:\Program Files (x86)\Git\bin\bash.exe",
+        ):
+            if os.path.isfile(cand):
+                return cand
+    found = shutil.which("bash")
+    return found if found else "bash"
+
+
+def _runner_command(entrypoint_rel):
+    entry = os.path.join(ROOT, entrypoint_rel)
+    if entry.endswith(".py"):
+        return [sys.executable, entry]
+    return [_bash_executable(), entry]
+
+
 def banner():
     data = load_dataset()
     print("=" * 78)
@@ -150,17 +175,17 @@ def verify():
     return 0
 
 
-def run_all():
+def run_all(*, primary_only=False):
     data = load_dataset()
     expected_active = set(t["dir"] for t in data["toolsActiveDetail"])
     expected_dark = set(t["dir"] for t in data["toolsInactive"]) | \
         set(t["dir"] for t in data["toolsInactiveSilent"])
 
+    rows = [r for r in WIRING if r["role"] == "primary"] if primary_only else WIRING
+
     ran, skipped, absent, failed, unexpected = [], [], [], [], []
-    for row in WIRING:
-        entry = os.path.join(ROOT, row["entrypoint"])
-        cmd = ([sys.executable, entry] if entry.endswith(".py")
-               else ["bash", entry])
+    for row in rows:
+        cmd = _runner_command(row["entrypoint"])
         print("\n--- %s (%s) ---" % (row["label"], row["dir"]))
         proc = subprocess.Popen(cmd, cwd=ROOT)
         proc.communicate()
@@ -193,7 +218,10 @@ def run_all():
               % " ".join(sorted(absent)))
         print("            See Tool Triggering (Synthetic Data)/<name>/INSTALL.md. Not a Python 3.13 finding.")
         return 1
-    missing_active = sorted(expected_active - set(ran))
+    expected_run = set(
+        t["dir"] for t in data["toolsActiveDetail"] if t.get("role") == "primary"
+    ) if primary_only else expected_active
+    missing_active = sorted(expected_run - set(ran))
     if missing_active:
         print("FAIL  recorded ACTIVE but did not run: %s" % " ".join(missing_active))
         return 1
@@ -211,9 +239,16 @@ def main():
     parser = argparse.ArgumentParser(description="Tool integration for PY-169")
     parser.add_argument("--verify", action="store_true")
     parser.add_argument("--run", action="store_true")
+    parser.add_argument(
+        "--run-primary",
+        action="store_true",
+        help="run only primary tools (White Box sheet primaries)",
+    )
     args = parser.parse_args()
     if args.verify:
         return verify()
+    if args.run_primary:
+        return run_all(primary_only=True)
     if args.run:
         return run_all()
     banner()

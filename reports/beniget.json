@@ -1,0 +1,160 @@
+{
+  "beniget": "0.5.0",
+  "files": [
+    {
+      "definitions": 176,
+      "file": "orderlab/services/pricing_rules.py",
+      "sample_unused": [
+        {
+          "line": 1,
+          "name": "<Constant>",
+          "uses": 0
+        },
+        {
+          "line": 9,
+          "name": "<Call>",
+          "uses": 0
+        },
+        {
+          "line": 11,
+          "name": "<Call>",
+          "uses": 0
+        },
+        {
+          "line": 14,
+          "name": "PricingRules",
+          "uses": 0
+        },
+        {
+          "line": 15,
+          "name": "<Constant>",
+          "uses": 0
+        },
+        {
+          "line": 17,
+          "name": "<Constant>",
+          "uses": 0
+        }
+      ],
+      "unused_definitions": 52
+    },
+    {
+      "definitions": 192,
+      "file": "orderlab/services/order_service.py",
+      "sample_unused": [
+        {
+          "line": 1,
+          "name": "<Constant>",
+          "uses": 0
+        },
+        {
+          "line": 10,
+          "name": "<Constant>",
+          "uses": 0
+        },
+        {
+          "line": 12,
+          "name": "__init__",
+          "uses": 0
+        },
+        {
+          "line": 12,
+          "name": "str",
+          "uses": 0
+        },
+        {
+          "line": 12,
+          "name": "<Subscript>",
+          "uses": 0
+        },
+        {
+          "line": 12,
+          "name": "<Constant>",
+          "uses": 0
+        }
+      ],
+      "unused_definitions": 58
+    },
+    {
+      "definitions": 101,
+      "file": "orderlab/analysis/taint_fixture.py",
+      "sample_unused": [
+        {
+          "line": 1,
+          "name": "<Constant>",
+          "uses": 0
+        },
+        {
+          "line": 23,
+          "name": "flow_from_environment",
+          "uses": 0
+        },
+        {
+          "line": 24,
+          "name": "<Constant>",
+          "uses": 0
+        },
+        {
+          "line": 25,
+          "name": "<Call>",
+          "uses": 0
+        },
+        {
+          "line": 26,
+          "name": "<BinOp>",
+          "uses": 0
+        },
+        {
+          "line": 27,
+          "name": "<Call>",
+          "uses": 0
+        }
+      ],
+      "unused_definitions": 23
+    },
+    {
+      "definitions": 75,
+      "file": "orderlab/analysis/call_graph_sample.py",
+      "sample_unused": [
+        {
+          "line": 1,
+          "name": "<Constant>",
+          "uses": 0
+        },
+        {
+          "line": 13,
+          "name": "<BinOp>",
+          "uses": 0
+        },
+        {
+          "line": 17,
+          "name": "<BinOp>",
+          "uses": 0
+        },
+        {
+          "line": 21,
+          "name": "<BinOp>",
+          "uses": 0
+        },
+        {
+          "line": 25,
+          "name": "<BinOp>",
+          "uses": 0
+        },
+        {
+          "line": 29,
+          "name": "<Constant>",
+          "uses": 0
+        }
+      ],
+      "unused_definitions": 16
+    }
+  ],
+  "interpreter": "3.13.14",
+  "pep695_unbound_false_positives": 7,
+  "pep695_unbound_names": [
+    "T"
+  ],
+  "tool": "Beniget",
+  "total_definitions": 544
+}

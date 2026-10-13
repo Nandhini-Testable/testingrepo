@@ -1,0 +1,70 @@
+{
+  "duplicates": [
+    {
+      "firstFile": {
+        "end": 65,
+        "endLoc": {
+          "column": 27,
+          "line": 65,
+          "position": 2257
+        },
+        "name": "\\\\?\\C:\\cursor-TP\\testingrepo-PY_V313\\src\\orderlab\\services\\retail_order_processor.py",
+        "start": 12,
+        "startLoc": {
+          "column": 65,
+          "line": 12,
+          "position": 329
+        }
+      },
+      "format": "python",
+      "fragment": "    \"\"\"Prices retail orders and keeps a running channel summary.\"\"\"\n\n    def __init__(self, rules: PricingRules = None, taxes: TaxTable = None) -> None:\n        self.rules = rules or PricingRules()\n        self.taxes = taxes or TaxTable()\n        self._accepted = 0\n        self._rejected = 0\n        self._revenue = 0.0\n\n    def accepts(self, order: OrderRecord) -> bool:\n        if order.channel != CHANNEL:\n            return False\n        if not order.lines:\n            return False\n        return not order.validate()\n\n    def process(self, order: OrderRecord) -> Dict[str, float]:\n        if not self.accepts(order):\n            self._rejected += 1\n            return {\"order_id\": order.order_id, \"accepted\": 0.0, \"total\": 0.0}\n        gross = order.gross\n        rate = self.rules.combined(order.tier, order.units, order.promo_code)\n        discount = round(gross * rate, 2)\n        net = round(gross - discount, 2)\n        tax, total = self.taxes.apply(net, order.channel, order.region)\n        self._accepted += 1\n        self._revenue = round(self._revenue + total, 2)\n        return {\n            \"order_id\": order.order_id,\n            \"accepted\": 1.0,\n            \"gross\": round(gross, 2),\n            \"discount\": discount,\n            \"net\": net,\n            \"tax\": tax,\n            \"total\": total,\n        }\n\n    def process_all(self, orders: Iterable[OrderRecord]) -> List[Dict[str, float]]:\n        return [self.process(order) for order in orders]\n\n    def summary(self) -> Dict[str, float]:\n        handled = self._accepted + self._rejected\n        acceptance = (self._accepted / handled) if handled else 0.0\n        return {\n            \"channel_accepted\": float(self._accepted),\n            \"channel_rejected\": float(self._rejected),\n            \"channel_revenue\": round(self._revenue, 2),\n            \"channel_acceptance_rate\": round(acceptance, 4),\n        }\n\n    def reset(self) -> None:\n        self._accepted = 0\n        self._rejected = 0\n        self._revenue = 0.0",
+      "isNew": false,
+      "lines": 54,
+      "secondFile": {
+        "end": 65,
+        "endLoc": {
+          "column": 27,
+          "line": 65,
+          "position": 2269
+        },
+        "name": "\\\\?\\C:\\cursor-TP\\testingrepo-PY_V313\\src\\orderlab\\services\\wholesale_order_processor.py",
+        "start": 12,
+        "startLoc": {
+          "column": 68,
+          "line": 12,
+          "position": 341
+        }
+      },
+      "tokens": 403
+    }
+  ],
+  "statistics": {
+    "detectionDate": "2026-10-13T16:19:01.369Z",
+    "formats": {
+      "python": {
+        "clones": 1,
+        "duplicatedLines": 53,
+        "duplicatedTokens": 403,
+        "lines": 1989,
+        "newClones": 0,
+        "newDuplicatedLines": 0,
+        "percentage": 2.6646556058320763,
+        "percentageTokens": 2.959753231492362,
+        "sources": 17,
+        "tokens": 13616
+      }
+    },
+    "total": {
+      "clones": 1,
+      "duplicatedLines": 53,
+      "duplicatedTokens": 403,
+      "lines": 1989,
+      "newClones": 0,
+      "newDuplicatedLines": 0,
+      "percentage": 2.6646556058320763,
+      "percentageTokens": 2.959753231492362,
+      "sources": 17,
+      "tokens": 13616
+    }
+  }
+}

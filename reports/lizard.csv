@@ -1,0 +1,83 @@
+2,1,9,1,2,"stage_four@12-13@src/orderlab\analysis\call_graph_sample.py","src/orderlab\analysis\call_graph_sample.py","stage_four","stage_four( value )",12,13
+2,1,12,1,2,"stage_three@16-17@src/orderlab\analysis\call_graph_sample.py","src/orderlab\analysis\call_graph_sample.py","stage_three","stage_three( value )",16,17
+2,1,12,1,2,"stage_two@20-21@src/orderlab\analysis\call_graph_sample.py","src/orderlab\analysis\call_graph_sample.py","stage_two","stage_two( value )",20,21
+2,1,15,1,2,"stage_one@24-25@src/orderlab\analysis\call_graph_sample.py","src/orderlab\analysis\call_graph_sample.py","stage_one","stage_one( value )",24,25
+2,1,13,1,3,"entry_point@28-30@src/orderlab\analysis\call_graph_sample.py","src/orderlab\analysis\call_graph_sample.py","entry_point","entry_point( value = 1 )",28,30
+4,2,19,1,4,"ping@33-36@src/orderlab\analysis\call_graph_sample.py","src/orderlab\analysis\call_graph_sample.py","ping","ping( depth )",33,36
+4,2,19,1,4,"pong@39-42@src/orderlab\analysis\call_graph_sample.py","src/orderlab\analysis\call_graph_sample.py","pong","pong( depth )",39,42
+2,2,27,1,3,"fan_out@45-47@src/orderlab\analysis\call_graph_sample.py","src/orderlab\analysis\call_graph_sample.py","fan_out","fan_out( values )",45,47
+56,21,299,9,59,"classify_shipment@14-72@src/orderlab\analysis\complexity_sample.py","src/orderlab\analysis\complexity_sample.py","classify_shipment","classify_shipment( order , region , tier , weight_kg , hazardous , express , customs_value , destination_zone , promo = None )",14,72
+11,5,105,2,12,"summarise_bands@75-86@src/orderlab\analysis\complexity_sample.py","src/orderlab\analysis\complexity_sample.py","summarise_bands","summarise_bands( rows : List [ Dict [ str , object ] ] , minimum : Optional [ float ] = None )",75,86
+3,1,28,2,4,"deprecated_round_half_up@10-13@src/orderlab\analysis\dead_code.py","src/orderlab\analysis\dead_code.py","deprecated_round_half_up","deprecated_round_half_up( value , places = 2 )",10,13
+4,1,35,1,5,"unused_channel_migration@16-20@src/orderlab\analysis\dead_code.py","src/orderlab\analysis\dead_code.py","unused_channel_migration","unused_channel_migration( order )",16,20
+2,2,20,2,2,"__init__@26-27@src/orderlab\analysis\dead_code.py","src/orderlab\analysis\dead_code.py","__init__","__init__( self , rows = None )",26,27
+3,1,17,2,3,"add@29-31@src/orderlab\analysis\dead_code.py","src/orderlab\analysis\dead_code.py","add","add( self , row )",29,31
+2,2,21,1,2,"render@33-34@src/orderlab\analysis\dead_code.py","src/orderlab\analysis\dead_code.py","render","render( self )",33,34
+3,1,14,1,4,"unreachable_after_return@37-40@src/orderlab\analysis\dead_code.py","src/orderlab\analysis\dead_code.py","unreachable_after_return","unreachable_after_return( value )",37,40
+7,2,44,2,8,"BadlyNamedFunction@15-22@src/orderlab\analysis\lint_violations.py","src/orderlab\analysis\lint_violations.py","BadlyNamedFunction","BadlyNamedFunction( InputValue , otherArg = [ ] )",15,22
+7,2,27,1,8,"swallow_everything@25-32@src/orderlab\analysis\lint_violations.py","src/orderlab\analysis\lint_violations.py","swallow_everything","swallow_everything( path )",25,32
+6,3,22,1,7,"compare_singletons@35-41@src/orderlab\analysis\lint_violations.py","src/orderlab\analysis\lint_violations.py","compare_singletons","compare_singletons( value )",35,41
+3,1,28,2,4,"shadow_builtin@44-47@src/orderlab\analysis\lint_violations.py","src/orderlab\analysis\lint_violations.py","shadow_builtin","shadow_builtin( list , dict )",44,47
+3,1,21,1,4,"run_report@22-25@src/orderlab\analysis\sast_fixture.py","src/orderlab\analysis\sast_fixture.py","run_report","run_report( report_name )",22,25
+2,1,22,2,3,"evaluate_rule@28-30@src/orderlab\analysis\sast_fixture.py","src/orderlab\analysis\sast_fixture.py","evaluate_rule","evaluate_rule( expression , context )",28,30
+2,1,22,1,3,"legacy_checksum@33-35@src/orderlab\analysis\sast_fixture.py","src/orderlab\analysis\sast_fixture.py","legacy_checksum","legacy_checksum( payload )",33,35
+2,1,13,1,3,"load_settings@38-40@src/orderlab\analysis\sast_fixture.py","src/orderlab\analysis\sast_fixture.py","load_settings","load_settings( blob )",38,40
+2,1,13,1,3,"restore_session@43-45@src/orderlab\analysis\sast_fixture.py","src/orderlab\analysis\sast_fixture.py","restore_session","restore_session( blob )",43,45
+3,1,14,0,4,"unverified_client@48-51@src/orderlab\analysis\sast_fixture.py","src/orderlab\analysis\sast_fixture.py","unverified_client","unverified_client( )",48,51
+5,1,36,1,6,"scratch_path@54-59@src/orderlab\analysis\sast_fixture.py","src/orderlab\analysis\sast_fixture.py","scratch_path","scratch_path( name )",54,59
+2,2,24,0,3,"session_token@62-64@src/orderlab\analysis\sast_fixture.py","src/orderlab\analysis\sast_fixture.py","session_token","session_token( )",62,64
+3,1,16,1,4,"writable_by_everyone@67-70@src/orderlab\analysis\sast_fixture.py","src/orderlab\analysis\sast_fixture.py","writable_by_everyone","writable_by_everyone( path )",67,70
+2,1,14,0,3,"temp_without_cleanup@73-75@src/orderlab\analysis\sast_fixture.py","src/orderlab\analysis\sast_fixture.py","temp_without_cleanup","temp_without_cleanup( )",73,75
+4,1,35,0,5,"flow_from_environment@23-27@src/orderlab\analysis\taint_fixture.py","src/orderlab\analysis\taint_fixture.py","flow_from_environment","flow_from_environment( )",23,27
+4,2,40,0,5,"flow_from_argv@30-34@src/orderlab\analysis\taint_fixture.py","src/orderlab\analysis\taint_fixture.py","flow_from_argv","flow_from_argv( )",30,34
+4,1,30,1,5,"flow_from_file@37-41@src/orderlab\analysis\taint_fixture.py","src/orderlab\analysis\taint_fixture.py","flow_from_file","flow_from_file( path )",37,41
+4,1,30,2,10,"lookup_order@44-53@src/orderlab\analysis\taint_fixture.py","src/orderlab\analysis\taint_fixture.py","lookup_order","lookup_order( cursor , order_id )",44,53
+3,1,28,2,4,"sanitised_lookup@56-59@src/orderlab\analysis\taint_fixture.py","src/orderlab\analysis\taint_fixture.py","sanitised_lookup","sanitised_lookup( cursor , order_id )",56,59
+6,1,45,5,6,"__init__@18-23@src/orderlab\models\order_record.py","src/orderlab\models\order_record.py","__init__","__init__( self , sku : str , quantity : int , unit_price : float , discountable : bool = True )",18,23
+2,1,20,1,2,"gross@26-27@src/orderlab\models\order_record.py","src/orderlab\models\order_record.py","gross","gross( self )",26,27
+14,5,127,2,14,"from_mapping@30-43@src/orderlab\models\order_record.py","src/orderlab\models\order_record.py","from_mapping","from_mapping( cls , raw : Dict [ str , object ] )",30,43
+2,1,24,1,2,"__repr__@45-46@src/orderlab\models\order_record.py","src/orderlab\models\order_record.py","__repr__","__repr__( self )",45,46
+5,2,58,2,5,"__eq__@48-52@src/orderlab\models\order_record.py","src/orderlab\models\order_record.py","__eq__","__eq__( self , other : object )",48,52
+2,1,28,1,2,"__hash__@54-55@src/orderlab\models\order_record.py","src/orderlab\models\order_record.py","__hash__","__hash__( self )",54,55
+8,1,72,7,8,"__init__@67-74@src/orderlab\models\order_record.py","src/orderlab\models\order_record.py","__init__","__init__( self , order_id : str , channel : str , region : str , tier : str , lines : Iterable [ OrderLine ] , promo_code : Optional [ str ] = None )",67,74
+2,2,20,1,2,"units@77-78@src/orderlab\models\order_record.py","src/orderlab\models\order_record.py","units","units( self )",77,78
+2,2,25,1,2,"gross@81-82@src/orderlab\models\order_record.py","src/orderlab\models\order_record.py","gross","gross( self )",81,82
+13,6,110,1,14,"validate@84-97@src/orderlab\models\order_record.py","src/orderlab\models\order_record.py","validate","validate( self )",84,97
+8,4,119,2,8,"from_mapping@100-107@src/orderlab\models\order_record.py","src/orderlab\models\order_record.py","from_mapping","from_mapping( cls , raw : Dict [ str , object ] )",100,107
+2,1,23,1,2,"__repr__@109-110@src/orderlab\models\order_record.py","src/orderlab\models\order_record.py","__repr__","__repr__( self )",109,110
+4,3,49,3,4,"__init__@28-31@src/orderlab\models\tax_table.py","src/orderlab\models\tax_table.py","__init__","__init__( self , channel_rates : Dict [ str , float ] = None , region_multiplier : Dict [ str , float ] = None )",28,31
+7,2,61,3,7,"rate_for@33-39@src/orderlab\models\tax_table.py","src/orderlab\models\tax_table.py","rate_for","rate_for( self , channel : str , region : str )",33,39
+4,1,56,4,5,"apply@41-45@src/orderlab\models\tax_table.py","src/orderlab\models\tax_table.py","apply","apply( self , amount : float , channel : str , region : str )",41,45
+2,1,22,1,2,"known_channels@47-48@src/orderlab\models\tax_table.py","src/orderlab\models\tax_table.py","known_channels","known_channels( self )",47,48
+8,1,51,0,13,"dependency_versions@25-37@src/orderlab\platform\integrations.py","src/orderlab\platform\integrations.py","dependency_versions","dependency_versions( )",25,37
+3,1,42,4,3,"render_invoice@40-42@src/orderlab\platform\integrations.py","src/orderlab\platform\integrations.py","render_invoice","render_invoice( order_id : str , region : str , total : float , line_count : int )",40,42
+7,2,64,3,8,"post_order_summary@45-52@src/orderlab\platform\integrations.py","src/orderlab\platform\integrations.py","post_order_summary","post_order_summary( endpoint : str , payload : Dict [ str , Any ] , timeout : int = DEFAULT_TIMEOUT )",45,52
+7,2,61,2,8,"pooled_get@55-62@src/orderlab\platform\integrations.py","src/orderlab\platform\integrations.py","pooled_get","pooled_get( url : str , timeout : int = DEFAULT_TIMEOUT )",55,62
+3,2,38,2,4,"seal@65-68@src/orderlab\platform\integrations.py","src/orderlab\platform\integrations.py","seal","seal( secret : bytes , key : Optional [ bytes ] = None )",65,68
+2,1,25,1,3,"archive_fingerprint@71-73@src/orderlab\platform\integrations.py","src/orderlab\platform\integrations.py","archive_fingerprint","archive_fingerprint( payload : bytes )",71,73
+7,1,60,3,8,"open_transfer_channel@76-83@src/orderlab\platform\integrations.py","src/orderlab\platform\integrations.py","open_transfer_channel","open_transfer_channel( host : str , username : str , key_path : str )",76,83
+5,1,54,3,5,"__init__@12-16@src/orderlab\services\order_service.py","src/orderlab\services\order_service.py","__init__","__init__( self , order_id : str , problems : List [ str ] )",12,16
+4,3,42,3,4,"__init__@22-25@src/orderlab\services\order_service.py","src/orderlab\services\order_service.py","__init__","__init__( self , rules : PricingRules = None , taxes : TaxTable = None )",22,25
+13,4,125,2,13,"price@27-39@src/orderlab\services\order_service.py","src/orderlab\services\order_service.py","price","price( self , order : OrderRecord )",27,39
+9,3,67,2,10,"price_all@41-50@src/orderlab\services\order_service.py","src/orderlab\services\order_service.py","price_all","price_all( self , orders : Iterable [ OrderRecord ] )",41,50
+2,1,11,1,2,"processed_count@53-54@src/orderlab\services\order_service.py","src/orderlab\services\order_service.py","processed_count","processed_count( self )",53,54
+2,1,12,1,2,"reset@56-57@src/orderlab\services\order_service.py","src/orderlab\services\order_service.py","reset","reset( self )",56,57
+2,2,26,2,2,"__init__@19-20@src/orderlab\services\pricing_rules.py","src/orderlab\services\pricing_rules.py","__init__","__init__( self , max_combined : float = None )",19,20
+2,1,22,2,2,"tier_discount@22-23@src/orderlab\services\pricing_rules.py","src/orderlab\services\pricing_rules.py","tier_discount","tier_discount( self , tier : str )",22,23
+8,4,42,2,8,"volume_bonus@25-32@src/orderlab\services\pricing_rules.py","src/orderlab\services\pricing_rules.py","volume_bonus","volume_bonus( self , units : int )",25,32
+4,2,37,2,4,"promo_discount@34-37@src/orderlab\services\pricing_rules.py","src/orderlab\services\pricing_rules.py","promo_discount","promo_discount( self , promo_code : Optional [ str ] )",34,37
+4,2,64,4,4,"combined@39-42@src/orderlab\services\pricing_rules.py","src/orderlab\services\pricing_rules.py","combined","combined( self , tier : str , units : int , promo_code : Optional [ str ] = None )",39,42
+7,2,80,4,7,"describe@44-50@src/orderlab\services\pricing_rules.py","src/orderlab\services\pricing_rules.py","describe","describe( self , tier : str , units : int , promo_code : Optional [ str ] = None )",44,50
+6,3,54,3,6,"__init__@14-19@src/orderlab\services\retail_order_processor.py","src/orderlab\services\retail_order_processor.py","__init__","__init__( self , rules : PricingRules = None , taxes : TaxTable = None )",14,19
+6,3,35,2,6,"accepts@21-26@src/orderlab\services\retail_order_processor.py","src/orderlab\services\retail_order_processor.py","accepts","accepts( self , order : OrderRecord )",21,26
+20,2,174,2,20,"process@28-47@src/orderlab\services\retail_order_processor.py","src/orderlab\services\retail_order_processor.py","process","process( self , order : OrderRecord )",28,47
+2,2,35,2,2,"process_all@49-50@src/orderlab\services\retail_order_processor.py","src/orderlab\services\retail_order_processor.py","process_all","process_all( self , orders : Iterable [ OrderRecord ] )",49,50
+9,2,77,1,9,"summary@52-60@src/orderlab\services\retail_order_processor.py","src/orderlab\services\retail_order_processor.py","summary","summary( self )",52,60
+4,1,24,1,4,"reset@62-65@src/orderlab\services\retail_order_processor.py","src/orderlab\services\retail_order_processor.py","reset","reset( self )",62,65
+6,3,54,3,6,"__init__@14-19@src/orderlab\services\wholesale_order_processor.py","src/orderlab\services\wholesale_order_processor.py","__init__","__init__( self , rules : PricingRules = None , taxes : TaxTable = None )",14,19
+6,3,35,2,6,"accepts@21-26@src/orderlab\services\wholesale_order_processor.py","src/orderlab\services\wholesale_order_processor.py","accepts","accepts( self , order : OrderRecord )",21,26
+20,2,174,2,20,"process@28-47@src/orderlab\services\wholesale_order_processor.py","src/orderlab\services\wholesale_order_processor.py","process","process( self , order : OrderRecord )",28,47
+2,2,35,2,2,"process_all@49-50@src/orderlab\services\wholesale_order_processor.py","src/orderlab\services\wholesale_order_processor.py","process_all","process_all( self , orders : Iterable [ OrderRecord ] )",49,50
+9,2,77,1,9,"summary@52-60@src/orderlab\services\wholesale_order_processor.py","src/orderlab\services\wholesale_order_processor.py","summary","summary( self )",52,60
+4,1,24,1,4,"reset@62-65@src/orderlab\services\wholesale_order_processor.py","src/orderlab\services\wholesale_order_processor.py","reset","reset( self )",62,65
+13,6,127,1,13,"main@21-33@src/orderlab\__main__.py","src/orderlab\__main__.py","main","main( argv = None )",21,33

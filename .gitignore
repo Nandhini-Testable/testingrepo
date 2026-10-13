@@ -21,6 +21,7 @@ htmlcov/
 # into the source tree has to be contained -- the runner sweeps them into
 # reports/ and this rule keeps any stragglers out of git.
 *.mdc
-reports/
+reports/*.mdc
+# Primary-tool report snapshots are committed on this branch (see --run-primary).
 *.log
 .DS_Store

@@ -1,0 +1,539 @@
+{
+  "functions": 83,
+  "interpreter": "3.13.14",
+  "over_threshold": 1,
+  "rows": [
+    {
+      "file": "src/orderlab/analysis/complexity_sample.py",
+      "function": "classify_shipment",
+      "line": 14,
+      "score": 50
+    },
+    {
+      "file": "src/orderlab/analysis/complexity_sample.py",
+      "function": "summarise_bands",
+      "line": 75,
+      "score": 6
+    },
+    {
+      "file": "src/orderlab/models/order_record.py",
+      "function": "from_mapping",
+      "line": 30,
+      "score": 6
+    },
+    {
+      "file": "src/orderlab/services/order_service.py",
+      "function": "price_all",
+      "line": 41,
+      "score": 6
+    },
+    {
+      "file": "src/orderlab/models/order_record.py",
+      "function": "validate",
+      "line": 84,
+      "score": 5
+    },
+    {
+      "file": "src/orderlab/analysis/lint_violations.py",
+      "function": "swallow_everything",
+      "line": 25,
+      "score": 3
+    },
+    {
+      "file": "src/orderlab/models/tax_table.py",
+      "function": "rate_for",
+      "line": 33,
+      "score": 3
+    },
+    {
+      "file": "src/orderlab/platform/integrations.py",
+      "function": "pooled_get",
+      "line": 55,
+      "score": 3
+    },
+    {
+      "file": "src/orderlab/platform/integrations.py",
+      "function": "post_order_summary",
+      "line": 45,
+      "score": 3
+    },
+    {
+      "file": "src/orderlab/services/pricing_rules.py",
+      "function": "volume_bonus",
+      "line": 25,
+      "score": 3
+    },
+    {
+      "file": "src/orderlab/__main__.py",
+      "function": "main",
+      "line": 21,
+      "score": 2
+    },
+    {
+      "file": "src/orderlab/analysis/lint_violations.py",
+      "function": "compare_singletons",
+      "line": 35,
+      "score": 2
+    },
+    {
+      "file": "src/orderlab/models/order_record.py",
+      "function": "from_mapping",
+      "line": 100,
+      "score": 2
+    },
+    {
+      "file": "src/orderlab/models/tax_table.py",
+      "function": "__init__",
+      "line": 28,
+      "score": 2
+    },
+    {
+      "file": "src/orderlab/services/order_service.py",
+      "function": "__init__",
+      "line": 22,
+      "score": 2
+    },
+    {
+      "file": "src/orderlab/services/retail_order_processor.py",
+      "function": "__init__",
+      "line": 14,
+      "score": 2
+    },
+    {
+      "file": "src/orderlab/services/retail_order_processor.py",
+      "function": "accepts",
+      "line": 21,
+      "score": 2
+    },
+    {
+      "file": "src/orderlab/services/wholesale_order_processor.py",
+      "function": "__init__",
+      "line": 14,
+      "score": 2
+    },
+    {
+      "file": "src/orderlab/services/wholesale_order_processor.py",
+      "function": "accepts",
+      "line": 21,
+      "score": 2
+    },
+    {
+      "file": "src/orderlab/analysis/call_graph_sample.py",
+      "function": "ping",
+      "line": 33,
+      "score": 1
+    },
+    {
+      "file": "src/orderlab/analysis/call_graph_sample.py",
+      "function": "pong",
+      "line": 39,
+      "score": 1
+    },
+    {
+      "file": "src/orderlab/analysis/dead_code.py",
+      "function": "__init__",
+      "line": 26,
+      "score": 1
+    },
+    {
+      "file": "src/orderlab/analysis/lint_violations.py",
+      "function": "BadlyNamedFunction",
+      "line": 15,
+      "score": 1
+    },
+    {
+      "file": "src/orderlab/analysis/taint_fixture.py",
+      "function": "flow_from_argv",
+      "line": 30,
+      "score": 1
+    },
+    {
+      "file": "src/orderlab/models/order_record.py",
+      "function": "__eq__",
+      "line": 48,
+      "score": 1
+    },
+    {
+      "file": "src/orderlab/platform/integrations.py",
+      "function": "seal",
+      "line": 65,
+      "score": 1
+    },
+    {
+      "file": "src/orderlab/services/order_service.py",
+      "function": "price",
+      "line": 27,
+      "score": 1
+    },
+    {
+      "file": "src/orderlab/services/pricing_rules.py",
+      "function": "__init__",
+      "line": 19,
+      "score": 1
+    },
+    {
+      "file": "src/orderlab/services/pricing_rules.py",
+      "function": "combined",
+      "line": 39,
+      "score": 1
+    },
+    {
+      "file": "src/orderlab/services/pricing_rules.py",
+      "function": "describe",
+      "line": 44,
+      "score": 1
+    },
+    {
+      "file": "src/orderlab/services/pricing_rules.py",
+      "function": "promo_discount",
+      "line": 34,
+      "score": 1
+    },
+    {
+      "file": "src/orderlab/services/retail_order_processor.py",
+      "function": "process",
+      "line": 28,
+      "score": 1
+    },
+    {
+      "file": "src/orderlab/services/retail_order_processor.py",
+      "function": "summary",
+      "line": 52,
+      "score": 1
+    },
+    {
+      "file": "src/orderlab/services/wholesale_order_processor.py",
+      "function": "process",
+      "line": 28,
+      "score": 1
+    },
+    {
+      "file": "src/orderlab/services/wholesale_order_processor.py",
+      "function": "summary",
+      "line": 52,
+      "score": 1
+    },
+    {
+      "file": "src/orderlab/analysis/call_graph_sample.py",
+      "function": "entry_point",
+      "line": 28,
+      "score": 0
+    },
+    {
+      "file": "src/orderlab/analysis/call_graph_sample.py",
+      "function": "fan_out",
+      "line": 45,
+      "score": 0
+    },
+    {
+      "file": "src/orderlab/analysis/call_graph_sample.py",
+      "function": "stage_four",
+      "line": 12,
+      "score": 0
+    },
+    {
+      "file": "src/orderlab/analysis/call_graph_sample.py",
+      "function": "stage_one",
+      "line": 24,
+      "score": 0
+    },
+    {
+      "file": "src/orderlab/analysis/call_graph_sample.py",
+      "function": "stage_three",
+      "line": 16,
+      "score": 0
+    },
+    {
+      "file": "src/orderlab/analysis/call_graph_sample.py",
+      "function": "stage_two",
+      "line": 20,
+      "score": 0
+    },
+    {
+      "file": "src/orderlab/analysis/dead_code.py",
+      "function": "add",
+      "line": 29,
+      "score": 0
+    },
+    {
+      "file": "src/orderlab/analysis/dead_code.py",
+      "function": "deprecated_round_half_up",
+      "line": 10,
+      "score": 0
+    },
+    {
+      "file": "src/orderlab/analysis/dead_code.py",
+      "function": "render",
+      "line": 33,
+      "score": 0
+    },
+    {
+      "file": "src/orderlab/analysis/dead_code.py",
+      "function": "unreachable_after_return",
+      "line": 37,
+      "score": 0
+    },
+    {
+      "file": "src/orderlab/analysis/dead_code.py",
+      "function": "unused_channel_migration",
+      "line": 16,
+      "score": 0
+    },
+    {
+      "file": "src/orderlab/analysis/lint_violations.py",
+      "function": "shadow_builtin",
+      "line": 44,
+      "score": 0
+    },
+    {
+      "file": "src/orderlab/analysis/sast_fixture.py",
+      "function": "evaluate_rule",
+      "line": 28,
+      "score": 0
+    },
+    {
+      "file": "src/orderlab/analysis/sast_fixture.py",
+      "function": "legacy_checksum",
+      "line": 33,
+      "score": 0
+    },
+    {
+      "file": "src/orderlab/analysis/sast_fixture.py",
+      "function": "load_settings",
+      "line": 38,
+      "score": 0
+    },
+    {
+      "file": "src/orderlab/analysis/sast_fixture.py",
+      "function": "restore_session",
+      "line": 43,
+      "score": 0
+    },
+    {
+      "file": "src/orderlab/analysis/sast_fixture.py",
+      "function": "run_report",
+      "line": 22,
+      "score": 0
+    },
+    {
+      "file": "src/orderlab/analysis/sast_fixture.py",
+      "function": "scratch_path",
+      "line": 54,
+      "score": 0
+    },
+    {
+      "file": "src/orderlab/analysis/sast_fixture.py",
+      "function": "session_token",
+      "line": 62,
+      "score": 0
+    },
+    {
+      "file": "src/orderlab/analysis/sast_fixture.py",
+      "function": "temp_without_cleanup",
+      "line": 73,
+      "score": 0
+    },
+    {
+      "file": "src/orderlab/analysis/sast_fixture.py",
+      "function": "unverified_client",
+      "line": 48,
+      "score": 0
+    },
+    {
+      "file": "src/orderlab/analysis/sast_fixture.py",
+      "function": "writable_by_everyone",
+      "line": 67,
+      "score": 0
+    },
+    {
+      "file": "src/orderlab/analysis/taint_fixture.py",
+      "function": "flow_from_environment",
+      "line": 23,
+      "score": 0
+    },
+    {
+      "file": "src/orderlab/analysis/taint_fixture.py",
+      "function": "flow_from_file",
+      "line": 37,
+      "score": 0
+    },
+    {
+      "file": "src/orderlab/analysis/taint_fixture.py",
+      "function": "lookup_order",
+      "line": 44,
+      "score": 0
+    },
+    {
+      "file": "src/orderlab/analysis/taint_fixture.py",
+      "function": "sanitised_lookup",
+      "line": 56,
+      "score": 0
+    },
+    {
+      "file": "src/orderlab/models/order_record.py",
+      "function": "__hash__",
+      "line": 54,
+      "score": 0
+    },
+    {
+      "file": "src/orderlab/models/order_record.py",
+      "function": "__init__",
+      "line": 18,
+      "score": 0
+    },
+    {
+      "file": "src/orderlab/models/order_record.py",
+      "function": "__init__",
+      "line": 67,
+      "score": 0
+    },
+    {
+      "file": "src/orderlab/models/order_record.py",
+      "function": "__repr__",
+      "line": 45,
+      "score": 0
+    },
+    {
+      "file": "src/orderlab/models/order_record.py",
+      "function": "__repr__",
+      "line": 109,
+      "score": 0
+    },
+    {
+      "file": "src/orderlab/models/order_record.py",
+      "function": "gross",
+      "line": 26,
+      "score": 0
+    },
+    {
+      "file": "src/orderlab/models/order_record.py",
+      "function": "gross",
+      "line": 81,
+      "score": 0
+    },
+    {
+      "file": "src/orderlab/models/order_record.py",
+      "function": "units",
+      "line": 77,
+      "score": 0
+    },
+    {
+      "file": "src/orderlab/models/tax_table.py",
+      "function": "apply",
+      "line": 41,
+      "score": 0
+    },
+    {
+      "file": "src/orderlab/models/tax_table.py",
+      "function": "known_channels",
+      "line": 47,
+      "score": 0
+    },
+    {
+      "file": "src/orderlab/platform/integrations.py",
+      "function": "archive_fingerprint",
+      "line": 71,
+      "score": 0
+    },
+    {
+      "file": "src/orderlab/platform/integrations.py",
+      "function": "dependency_versions",
+      "line": 25,
+      "score": 0
+    },
+    {
+      "file": "src/orderlab/platform/integrations.py",
+      "function": "open_transfer_channel",
+      "line": 76,
+      "score": 0
+    },
+    {
+      "file": "src/orderlab/platform/integrations.py",
+      "function": "render_invoice",
+      "line": 40,
+      "score": 0
+    },
+    {
+      "file": "src/orderlab/services/order_service.py",
+      "function": "__init__",
+      "line": 12,
+      "score": 0
+    },
+    {
+      "file": "src/orderlab/services/order_service.py",
+      "function": "processed_count",
+      "line": 53,
+      "score": 0
+    },
+    {
+      "file": "src/orderlab/services/order_service.py",
+      "function": "reset",
+      "line": 56,
+      "score": 0
+    },
+    {
+      "file": "src/orderlab/services/pricing_rules.py",
+      "function": "tier_discount",
+      "line": 22,
+      "score": 0
+    },
+    {
+      "file": "src/orderlab/services/retail_order_processor.py",
+      "function": "process_all",
+      "line": 49,
+      "score": 0
+    },
+    {
+      "file": "src/orderlab/services/retail_order_processor.py",
+      "function": "reset",
+      "line": 62,
+      "score": 0
+    },
+    {
+      "file": "src/orderlab/services/wholesale_order_processor.py",
+      "function": "process_all",
+      "line": 49,
+      "score": 0
+    },
+    {
+      "file": "src/orderlab/services/wholesale_order_processor.py",
+      "function": "reset",
+      "line": 62,
+      "score": 0
+    }
+  ],
+  "threshold": 15,
+  "tool": "cognitive-ast",
+  "worst": [
+    {
+      "file": "src/orderlab/analysis/complexity_sample.py",
+      "function": "classify_shipment",
+      "line": 14,
+      "score": 50
+    },
+    {
+      "file": "src/orderlab/analysis/complexity_sample.py",
+      "function": "summarise_bands",
+      "line": 75,
+      "score": 6
+    },
+    {
+      "file": "src/orderlab/models/order_record.py",
+      "function": "from_mapping",
+      "line": 30,
+      "score": 6
+    },
+    {
+      "file": "src/orderlab/services/order_service.py",
+      "function": "price_all",
+      "line": 41,
+      "score": 6
+    },
+    {
+      "file": "src/orderlab/models/order_record.py",
+      "function": "validate",
+      "line": 84,
+      "score": 5
+    }
+  ]
+}
