@@ -8,11 +8,11 @@ ROOT="$(cd "$HERE/../.." && pwd)"
 . "$ROOT/tools/_skip.sh"
 
 mkdir -p "$ROOT/reports"
-require_binary "diff-cover" "diff-cover"
+require_binary "diff-cover" "node"
 
 cd "$ROOT"
 FINDINGS_EXIT=1
-diff-cover coverage/cobertura-coverage.xml --json-report reports/diff-cover.json
+node tools/diff-cover/diff_cover.js coverage/cobertura-coverage.xml --json-report reports/diff-cover.json
 rc=$?
 accept_findings "diff-cover" "$rc" "reports/diff-cover.json"
 exit $?

@@ -186,10 +186,10 @@
       "dir": "diff-cover",
       "role": "primary",
       "block": "Coverage Delta",
-      "pin": "diff-cover (pip)",
+      "pin": "diff_cover.js (Node port of diff-cover)",
       "status": "active",
       "measured": true,
-      "note": "the diff-cover CLI itself was invoked for real (pip install + --help) and works; its coverage-delta output depends on nyc's cobertura report, which needs a full npm install this session's verification bridge could not complete (slow mounted filesystem + shared disk quota, not a tool defect -- see javascript-repos-build-contract.md). Node-independent by construction."
+      "note": "diff-cover is implemented in Node (tools/diff-cover/diff_cover.js), a port of the Python diff-cover CLI: it reads the changed lines from `git diff origin/main...HEAD` plus the staged and unstaged changes and matches them against nyc's cobertura report (coverage/cobertura-coverage.xml). It needs only Node and git; its coverage-delta output depends on that report existing."
     },
     {
       "tool": "ESLint (eslint-scope)",
