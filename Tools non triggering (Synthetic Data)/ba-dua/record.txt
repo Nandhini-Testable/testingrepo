@@ -1,0 +1,33 @@
+Tin smelting: method and standing practice
+==========================================
+
+Work not finished by the end of the opening hour at the tin is raised, not
+carried quietly on. Carried quietly it surfaces at smelting, where it
+costs a turn instead of an hour.
+
+Counting moved to the end of the cycle after the charges figure was
+disputed twice in a month. The dispute ended; the disagreement about what
+the tin was for did not.
+
+A holding of charges reviewed and left in place is marked reviewed. The
+tin no longer distinguishes reviewed from unreviewed by silence, having
+done so for most of one season.
+
+Throughput was not measured at the tin until the charges were counted in
+writing. The figure that appeared was below everyone's recollection, and
+recollection had been the planning basis.
+
+When the charges were reported to one decimal place the instrument
+resolved only to whole units. The decimal carried nothing, and someone at
+the tin eventually explained it anyway.
+
+The queue at smelting runs oldest first and exceptions are logged. The
+exception log at the tin is reviewed before the exceptions are: a rule
+broken often is a rule written wrong.
+
+Sequence matters more than date in the tin record. Each change to how the
+charges were handled made the next one legible, and none would have been
+noticed under the earlier practice.
+
+Nothing in the tin file executes and nothing declares a project. For the
+charges that is the only property here that matters.
