@@ -17,5 +17,8 @@
   },
   "plugins": [
     "@stryker-mutator/mocha-runner"
-  ]
+  ],
+  "jsonReporter": {
+    "fileName": "reports/mutation.json"
+  }
 }
