@@ -1,4 +1,4 @@
-﻿# orderlab -- PY_V39_UV_PIP_MONC
+# orderlab -- PY_V39_UV_PIP_MONC
 
 Order-pricing domain used as a white-box tool-evaluation fixture. This git branch
 is the **full-primary** Python 3.9.23 variant: every White Box metric primary
@@ -54,6 +54,8 @@ See `dataset.json` for the full active/dark breakdown.
 ```
 make setup        # python -m pip install --upgrade 'pip==26.0.1'
 make install      # dev pins via scripts/install_dev_deps.sh (pymcdc vendor + tomli reconcile)
+
+`requirements.txt` at repo root pins CrossHair, Beniget, cosmic-ray, coverage, and pytest plugins for Testable worker checkout install. `cosmic-ray.toml` at repo root is used by the platform cosmic-ray runner when that task runs.
 ```
 
 > Both the backend and the package manager on this branch run on Python 3.9.23 for real; the branch installs, locks and tests cleanly.

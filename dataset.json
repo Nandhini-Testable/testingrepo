@@ -285,5 +285,12 @@
   ],
   "toolsInactiveSilent": [],
   "gitBranch": "PY_V39_UV_PIP_MONC",
-  "branchVariantNote": "Full White Box primary coverage on Python 3.9.23 using last 3.9-compatible tool pins; sibling PY_V39_UV_PIP_MONO keeps latest pins with intentional dark tools."
+  "branchVariantNote": "Full White Box primary coverage on Python 3.9.23 using last 3.9-compatible tool pins; sibling PY_V39_UV_PIP_MONO keeps latest pins with intentional dark tools.",
+  "platformCheckout": {
+    "requirementsTxt": "requirements.txt",
+    "requirementsDevTxt": "requirements-dev.txt",
+    "installScript": "scripts/install_dev_deps.sh",
+    "cosmicRayConfig": "cosmic-ray.toml",
+    "note": "requirements.txt pins crosshair, beniget, cosmic-ray, coverage, pytest-cov, testmon for wb-cpu-worker .wb_py_deps install; root cosmic-ray.toml is honoured by cosmic_ray_runner when the task runs."
+  }
 }

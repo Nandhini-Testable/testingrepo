@@ -1,0 +1,13 @@
+# Root config for Testable cosmic-ray runner (honours repo config over auto-gen).
+# Same mutation target as tools/cosmic-ray/cosmic-ray.toml — do not change orderlab logic.
+[cosmic-ray]
+module-path = "src/orderlab/services"
+timeout = 30.0
+excluded-modules = []
+test-command = "python -m pytest -x -q tests"
+
+[cosmic-ray.distributor]
+name = "local"
+
+[cosmic-ray.distributor.local]
+worker-count = 2

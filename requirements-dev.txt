@@ -13,6 +13,7 @@
 # -- test runner (INFRASTRUCTURE, not a roster tool: pinned to what runs) --
 pytest==8.4.2
 iniconfig==2.0.0   # pytest 8.4.2 on 3.9 -- iniconfig 2.1+ uses PEP 604 syntax
+pytest-cov>=5.0.0,<7   # coverage-py worker + local coverage runner (registry-compatible coverage pin)
 
 # -- roster tools, latest, marker-guarded ---------------------------------
 crosshair-tool==0.0.110 ; python_version >= "3.8"

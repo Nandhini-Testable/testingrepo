@@ -42,6 +42,7 @@ orderlab = "orderlab.__main__:main"
 [dependency-groups]
 dev = [
     "pytest==8.4.2",
+    "pytest-cov>=5.0.0,<7",
     "crosshair-tool==0.0.110 ; python_version >= '3.8'",
     "coverage==7.10.7",
     "radon==6.0.1",

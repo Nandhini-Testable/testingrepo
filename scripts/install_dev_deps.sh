@@ -9,6 +9,7 @@ PY="${PYTHON:-python3}"
 
 "$PY" -m pip install --upgrade 'pip==26.0.1'
 "$PY" -m pip install -e "$ROOT"
+"$PY" -m pip install -r "$ROOT/requirements.txt"
 
 FILTERED="$(mktemp)"
 grep -vE '^(semgrep|complexipy|-e )' "$ROOT/requirements-dev.txt" >"$FILTERED"

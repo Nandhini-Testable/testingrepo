@@ -478,6 +478,18 @@ def rule_shell_and_yaml():
                     fail("%s does not compile on Python %s: %s" % (rel, PY, exc))
 
 
+def rule_platform_whitebox_deps():
+    check("platform whitebox checkout deps")
+    if not exists("requirements.txt"):
+        fail("requirements.txt missing (Testable wb-cpu-worker checkout install)")
+    body = read("requirements.txt")
+    for needle in ("crosshair-tool", "beniget", "cosmic-ray", "pytest-cov", "coverage"):
+        if needle not in body:
+            fail("requirements.txt missing %s" % needle)
+    if not exists("cosmic-ray.toml"):
+        fail("cosmic-ray.toml missing at repo root (cosmic_ray_runner honours repo config)")
+
+
 def rule_functional_flag():
     check("branchFunctional")
     # A branch marked functional must carry a lockfile; a branch marked
@@ -502,7 +514,8 @@ def main():
                  rule_planted_pins, rule_duplicate_pair, rule_no_empty_packages,
                  rule_workspace, rule_readme, rule_prose_matches_repo,
                  rule_branch_identity,
-                 rule_shell_and_yaml, rule_functional_flag):
+                 rule_shell_and_yaml, rule_platform_whitebox_deps,
+                 rule_functional_flag):
         try:
             rule()
         except Exception as exc:            # a rule that crashes is a FAIL, not a pass
