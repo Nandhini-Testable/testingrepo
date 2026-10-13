@@ -292,5 +292,6 @@
         "Tool Triggering (Synthetic Data)/semgrep/TaintedFlows.cs"
       ]
     }
-  }
+  },
+  "aliasBranch": "CSharp_Version_6"
 }
