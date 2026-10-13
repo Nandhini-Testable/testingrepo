@@ -1,0 +1,46 @@
+<?xml version="1.0" ?>
+<?xml-stylesheet type="text/xsl" href="https://raw.githubusercontent.com/terryyin/lizard/master/lizard.xsl"?>
+<cppncss>
+	<measure type="Function">
+		<labels>
+			<label>Nr.</label>
+			<label>NCSS</label>
+			<label>CCN</label>
+		</labels>
+		<item name="ComplexityHotspot::Rate(...) at C:/cursor-TP/testingrepo-nandhini/Tool Triggering (Synthetic Data)/lizard\ComplexityHotspot.cs:20">
+			<value>1</value>
+			<value>29</value>
+			<value>25</value>
+		</item>
+		<item name="struct::IsDomestic(...) at C:/cursor-TP/testingrepo-nandhini/Tool Triggering (Synthetic Data)/lizard\ComplexityHotspot.cs:64">
+			<value>2</value>
+			<value>4</value>
+			<value>1</value>
+		</item>
+		<average label="NCSS" value="16.5"/>
+		<average label="CCN" value="13.0"/>
+	</measure>
+	<measure type="File">
+		<labels>
+			<label>Nr.</label>
+			<label>NCSS</label>
+			<label>CCN</label>
+			<label>Functions</label>
+		</labels>
+		<item name="C:/cursor-TP/testingrepo-nandhini/Tool Triggering (Synthetic Data)/lizard\ComplexityHotspot.cs">
+			<value>1</value>
+			<value>44</value>
+			<value>26</value>
+			<value>2</value>
+		</item>
+		<average label="NCSS" value="44.0"/>
+		<average label="CCN" value="26.0"/>
+		<average label="Functions" value="2.0"/>
+		<sum label="NCSS" value="44"/>
+		<sum label="CCN" value="26"/>
+		<sum label="Functions" value="2"/>
+		<average label="NCSS" value="16.5"/>
+		<average label="CCN" value="13.0"/>
+	</measure>
+</cppncss>
+

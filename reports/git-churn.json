@@ -1,0 +1,50 @@
+{
+  "tool": "git-churn",
+  "commits": 2,
+  "contributors": 1,
+  "ownership_pct": {
+    "Testable Corpus Bot": 100.0
+  },
+  "top_churn": [
+    [
+      "dataset.json",
+      889
+    ],
+    [
+      "Tool Triggering (Synthetic Data)/full_check.py",
+      299
+    ],
+    [
+      "README.md",
+      168
+    ],
+    [
+      "src/OrderKit/RiskScorer.cs",
+      125
+    ],
+    [
+      "src/OrderKit/PricingService.cs",
+      111
+    ],
+    [
+      "Tool Triggering (Synthetic Data)/unilyze/run.sh",
+      104
+    ],
+    [
+      "src/OrderKit/Diagnostics.cs",
+      96
+    ],
+    [
+      "src/OrderKit/Priceable.cs",
+      90
+    ],
+    [
+      "src/OrderKit/Order.cs",
+      89
+    ],
+    [
+      "Tool Triggering (Synthetic Data)/tool_integration.py",
+      86
+    ]
+  ]
+}

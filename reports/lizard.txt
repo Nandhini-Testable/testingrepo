@@ -1,0 +1,21 @@
+================================================
+  NLOC    CCN   token  PARAM  length  location  
+------------------------------------------------
+      29     25    289      6      35 ComplexityHotspot::Rate@20-54@C:/cursor-TP/testingrepo-nandhini/Tool Triggering (Synthetic Data)/lizard\ComplexityHotspot.cs
+       4      1     26      1       4 struct::IsDomestic@64-67@C:/cursor-TP/testingrepo-nandhini/Tool Triggering (Synthetic Data)/lizard\ComplexityHotspot.cs
+1 file analyzed.
+==============================================================
+NLOC    Avg.NLOC  AvgCCN  Avg.token  function_cnt    file
+--------------------------------------------------------------
+     44      16.5    13.0      157.5         2     C:/cursor-TP/testingrepo-nandhini/Tool Triggering (Synthetic Data)/lizard\ComplexityHotspot.cs
+
+===========================================================================================================
+!!!! Warnings (cyclomatic_complexity > 15 or length > 1000 or nloc > 1000000 or parameter_count > 100) !!!!
+================================================
+  NLOC    CCN   token  PARAM  length  location  
+------------------------------------------------
+      29     25    289      6      35 ComplexityHotspot::Rate@20-54@C:/cursor-TP/testingrepo-nandhini/Tool Triggering (Synthetic Data)/lizard\ComplexityHotspot.cs
+==========================================================================================
+Total nloc   Avg.NLOC  AvgCCN  Avg.token   Fun Cnt  Warning cnt   Fun Rt   nloc Rt
+------------------------------------------------------------------------------------------
+        44      16.5    13.0      157.5        2            1      0.50    0.88

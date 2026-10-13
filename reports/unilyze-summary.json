@@ -1,0 +1,10 @@
+{
+  "tool": "unilyze",
+  "toolVersion": "0.6.1",
+  "max_cyclomatic_complexity": 25,
+  "max_cyclomatic_complexity_member": "OrderKit.ToolData.Lizard.ComplexityHotspot.Rate",
+  "max_cognitive_complexity": 54,
+  "max_cognitive_complexity_member": "OrderKit.RiskScorer.Score",
+  "hotspot_peak_change_count": 0,
+  "hotspot_type_count": 0
+}

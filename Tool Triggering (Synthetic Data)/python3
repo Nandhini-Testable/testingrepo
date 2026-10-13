@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# Git Bash shim: real python3 on Windows is often the Store stub.
+exec "${PYTHON3:-python3}" "$@"

@@ -1,8 +1,10 @@
 bin/
 obj/
 packages/
-reports/
 .vs/
+# Primary-tool report snapshots are committed on this branch (see --run-primary).
+# Runners still write transient logs elsewhere; keep those out of git.
+reports/*.log
 *.user
 paket-files/
 .cake/

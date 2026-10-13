@@ -1,0 +1,71 @@
+{
+  "duplicates": [
+    {
+      "firstFile": {
+        "end": 40,
+        "endLoc": {
+          "column": 5,
+          "line": 40,
+          "position": 1637
+        },
+        "name": "\\\\?\\C:\\cursor-TP\\testingrepo-nandhini\\Tool Triggering (Synthetic Data)\\jscpd\\DuplicateBlockA.cs",
+        "start": 20,
+        "startLoc": {
+          "column": 4,
+          "line": 20,
+          "position": 776
+        }
+      },
+      "format": "csharp",
+      "fragment": "    {\n        public static long Settle(long[] lines, string region, int tier)\n        {\n            long runningTotal = 0;\n            for (int i = 0; i < lines.Length; i++)\n            {\n                long amount = lines[i];\n                if (amount <= 0) continue;\n                if (tier == 1) amount = amount - (amount / 20);\n                else if (tier == 2) amount = amount - (amount / 10);\n                else if (tier == 3) amount = amount - (amount / 5);\n                if (region == \"eu\") amount = amount + 120;\n                else if (region == \"apac\") amount = amount + 220;\n                else amount = amount + 20;\n                if (amount < 0) amount = 0;\n                runningTotal = runningTotal + amount;\n            }\n            if (runningTotal > 1000000) runningTotal = 1000000;\n            return runningTotal;\n        }\n    }",
+      "isNew": false,
+      "kind": "exact",
+      "lines": 21,
+      "secondFile": {
+        "end": 40,
+        "endLoc": {
+          "column": 5,
+          "line": 40,
+          "position": 1637
+        },
+        "name": "\\\\?\\C:\\cursor-TP\\testingrepo-nandhini\\Tool Triggering (Synthetic Data)\\jscpd\\DuplicateBlockB.cs",
+        "start": 20,
+        "startLoc": {
+          "column": 4,
+          "line": 20,
+          "position": 776
+        }
+      },
+      "tokens": 177
+    }
+  ],
+  "statistics": {
+    "detectionDate": "2026-10-13T18:32:42.142Z",
+    "formats": {
+      "csharp": {
+        "clones": 1,
+        "duplicatedLines": 21,
+        "duplicatedTokens": 177,
+        "lines": 95,
+        "newClones": 0,
+        "newDuplicatedLines": 0,
+        "percentage": 22.105263157894736,
+        "percentageTokens": 38.646288209606986,
+        "sources": 2,
+        "tokens": 458
+      }
+    },
+    "total": {
+      "clones": 1,
+      "duplicatedLines": 21,
+      "duplicatedTokens": 177,
+      "lines": 95,
+      "newClones": 0,
+      "newDuplicatedLines": 0,
+      "percentage": 22.105263157894736,
+      "percentageTokens": 38.646288209606986,
+      "sources": 2,
+      "tokens": 458
+    }
+  }
+}
