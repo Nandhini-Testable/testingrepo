@@ -1,4 +1,4 @@
-# TS_V20_VITE_NPM_MONO
+# TS_V20_VITE_NPM_MONO_ALL_TOOLS
 
 Part of the [`VISVANTHA/corpus`](https://github.com/VISVANTHA/corpus) white-box test-repo corpus (GraniteMill /
 `granite-mill`, domain: Community garden plots).
@@ -7,7 +7,7 @@ Part of the [`VISVANTHA/corpus`](https://github.com/VISVANTHA/corpus) white-box 
 
 | Variable | This branch |
 | --- | --- |
-| Branch | `TS_V20_VITE_NPM_MONO` |
+| Branch | `TS_V20_VITE_NPM_MONO_ALL_TOOLS` |
 | Language | TypeScript |
 | Node.js | 20.20.2 (family V20) |
 | Bundler | Vite (built as esbuild) |
@@ -135,7 +135,7 @@ npm run analyze:knip    # knip
 ## Workspace layout
 
 ```
-corpus/  (TS_V20_VITE_NPM_MONO)
+corpus/  (TS_V20_VITE_NPM_MONO_ALL_TOOLS)
 |-- .github/
 |-- src/
 |-- tests/  (or packages/shared/tests/ for Microservices)
@@ -165,3 +165,12 @@ says should happen, including the tools that are supposed to be dark.
 See `javascript-repos-build-contract.md` in the Testable (Tools) project for
 the full 103-metric roster, the repair notes, and the live pin-resolution
 method (npm registry `engines.node` ranges, prereleases excluded).
+
+## Platform Pipeline & Trigger Status
+
+| Property | Value |
+| --- | --- |
+| Branch | `TS_V20_VITE_NPM_MONO_ALL_TOOLS` |
+| Pipeline Scan Status | Active |
+| Node / TS Runtime | Node 20.20.2 / TypeScript 5.8 |
+| Platform Trigger Verification | Verified (All TypeScript Whitebox Tools Configured) |
