@@ -1,0 +1,29 @@
+Sail: standing notes on the cuts
+================================
+
+Throughput was not measured at the sail until the cuts were counted in
+writing. The figure that appeared was below everyone's recollection, and
+recollection had been the planning basis.
+
+The cuts are counted at the close of a turn, never at the start of the
+next one. Counted late, the figure drifts with whatever happened overnight
+at the sail.
+
+Night turns at the sail are logged separately. Folding them into the day
+figure once hid a standing shortfall in the cuts for most of a quarter
+before anyone looked.
+
+The queue at loft runs oldest first and exceptions are logged. The
+exception log at the sail is reviewed before the exceptions are: a rule
+broken often is a rule written wrong.
+
+Who counted the cuts is recorded beside the count. Not to apportion blame
+at the sail, but because two counters disagreeing is itself a measurement
+worth keeping.
+
+Loft cannot be hurried and the sail stopped trying. Rushing yields not a
+faster turn but a later one, because the cuts have to go back through
+loft.
+
+Kept as a plain record of the cuts. Written as a program it would give the
+roster's parsers something to read at the sail.

@@ -1,0 +1,28 @@
+# Machine-readable trigger for the evaluation harness.
+tool: MiniCover
+slug: minicover
+kind: sdk
+status: skipped
+target_framework: net5.0
+language_version: "9.0"
+runner: "Tool Triggering (Synthetic Data)/minicover/run.sh"
+expects:
+  exit_code: 3
+  reason: >-
+    MiniCover 3.10.0 declares .NET SDK 8.0/9.0/10.0 only -- verified against its own MiniCover.csproj (<TargetFrameworks>net10.0;net9.0;net8.0</TargetFrameworks>). It is the alternative for 22 metrics and cannot reach any .NET Framework target.
+metrics:
+  primary_for: 0
+  alternative_for: 22
+
+data:
+  folder: "Tool Triggering (Synthetic Data)/minicover"
+  planted: >-
+    an instrumentable accumulate/classify pair
+  expected: >-
+    instrumented statement hits
+  language_version: "9.0"
+  note: >-
+    The C# core of this folder's fixtures is C# 5-compatible, so it is identical
+    on all 13 families and what the tool measures cannot drift between them. The
+    LanguageMarker class in each file is what pins the file to C# 9.0; it does not
+    compile under C# 8.0. No project manifest is present, by design.

@@ -1,0 +1,28 @@
+# Machine-readable trigger for the evaluation harness.
+tool: AltCover
+slug: altcover
+kind: sdk
+status: not-installed
+target_framework: net5.0
+language_version: "9.0"
+runner: "Tool Triggering (Synthetic Data)/altcover/run.sh"
+expects:
+  exit_code: 4
+  reason: >-
+    Declares .NET Framework 2.0+ via a net20 recorder, so it is the one coverage tool in the roster that could reach this family. Blocked only by NuGet.
+metrics:
+  primary_for: 9
+  alternative_for: 0
+
+data:
+  folder: "Tool Triggering (Synthetic Data)/altcover"
+  planted: >-
+    three independent decisions giving 8 paths against 6 branches
+  expected: >-
+    a path count that differs from the branch count
+  language_version: "9.0"
+  note: >-
+    The C# core of this folder's fixtures is C# 5-compatible, so it is identical
+    on all 13 families and what the tool measures cannot drift between them. The
+    LanguageMarker class in each file is what pins the file to C# 9.0; it does not
+    compile under C# 8.0. No project manifest is present, by design.

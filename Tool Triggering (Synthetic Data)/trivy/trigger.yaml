@@ -1,0 +1,28 @@
+# Machine-readable trigger for the evaluation harness.
+tool: Trivy
+slug: trivy
+kind: standalone
+status: not-installed
+target_framework: net5.0
+language_version: "9.0"
+runner: "Tool Triggering (Synthetic Data)/trivy/run.sh"
+expects:
+  exit_code: 4
+  reason: >-
+    Standalone Go binary, absent from this host. Class C: reads manifests/lockfiles.
+metrics:
+  primary_for: 0
+  alternative_for: 9
+
+data:
+  folder: "Tool Triggering (Synthetic Data)/trivy"
+  planted: >-
+    a CycloneDX SBOM naming the five planted vulnerable pins
+  expected: >-
+    advisories against all five purls
+  language_version: "9.0"
+  note: >-
+    The C# core of this folder's fixtures is C# 5-compatible, so it is identical
+    on all 13 families and what the tool measures cannot drift between them. The
+    LanguageMarker class in each file is what pins the file to C# 9.0; it does not
+    compile under C# 8.0. No project manifest is present, by design.

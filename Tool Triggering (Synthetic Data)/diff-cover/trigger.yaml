@@ -1,0 +1,28 @@
+# Machine-readable trigger for the evaluation harness.
+tool: diff-cover
+slug: diff-cover
+kind: standalone
+status: skipped
+target_framework: net5.0
+language_version: "9.0"
+runner: "Tool Triggering (Synthetic Data)/diff-cover/run.sh"
+expects:
+  exit_code: 3
+  reason: >-
+    Class C: reads Cobertura/OpenCover XML. No coverage report can be produced on this family, so it has nothing to read.
+metrics:
+  primary_for: 0
+  alternative_for: 6
+
+data:
+  folder: "Tool Triggering (Synthetic Data)/diff-cover"
+  planted: >-
+    a sample Cobertura report plus the file it attributes
+  expected: >-
+    partial coverage on ChangedLines.cs, not 0% and not 100%
+  language_version: "9.0"
+  note: >-
+    The C# core of this folder's fixtures is C# 5-compatible, so it is identical
+    on all 13 families and what the tool measures cannot drift between them. The
+    LanguageMarker class in each file is what pins the file to C# 9.0; it does not
+    compile under C# 8.0. No project manifest is present, by design.

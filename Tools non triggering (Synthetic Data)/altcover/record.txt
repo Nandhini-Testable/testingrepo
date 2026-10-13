@@ -1,0 +1,37 @@
+Glass -- what is counted, and how
+=================================
+
+The reference piece is checked against the standard; the standard is
+checked against nothing. At the glass this is understood to be the weak
+point of the whole arrangement for the ramps.
+
+When the ramps were reported to one decimal place the instrument resolved
+only to whole units. The decimal carried nothing, and someone at the glass
+eventually explained it anyway.
+
+Annealing sets the pace of everything. Stations upstream can be worked
+harder without moving the daily figure, so a rising queue at annealing is
+read as information rather than fault.
+
+Annealing cannot be hurried and the glass stopped trying. Rushing yields
+not a faster turn but a later one, because the ramps have to go back
+through annealing.
+
+Tolerance on the ramps belongs to the measuring method, not the turn. When
+the frame was rebuilt the tolerance moved with it, and the older ramps
+figures were left as they stood.
+
+Two people witness the frame being zeroed before the first ramps are
+measured. A zero witnessed by one person has failed twice at the glass,
+both times in the same direction.
+
+Heat, draught and water at annealing sit inside a band rather than at a
+target. A target invites correction toward it, and correcting toward an
+unmeasured number cost the glass a week.
+
+Conditions at annealing are logged at the start and the end of a turn,
+never averaged across the middle. An average hides a glass drifting
+steadily in one direction.
+
+A record of the glass, not source. The distinction is the whole purpose of
+the folder these ramps notes sit in.

@@ -1,0 +1,11 @@
+{
+  "tool": "git log --numstat",
+  "input": "this branch's commit graph -- no source fixture exists or should",
+  "expect": {
+    "contributors": 4,
+    "countsCoAuthoredByTrailers": true,
+    "topChurnNonEmpty": true
+  },
+  "why": "Counts Co-authored-by trailers, not just the author field. This tool is one of the five declared in dataset.json expectations.negativeControl.",
+  "rosterNote": "This tool is NOT in C_All_tools_List.xlsx. It is kept as a deliberate negative control, not as a roster tool."
+}

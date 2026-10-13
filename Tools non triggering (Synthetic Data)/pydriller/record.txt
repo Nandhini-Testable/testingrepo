@@ -1,0 +1,29 @@
+Record of axle at the cartwright
+================================
+
+The sets are counted at the close of a turn, never at the start of the
+next one. Counted late, the figure drifts with whatever happened overnight
+at the cartwright.
+
+When the sets were reported to one decimal place the instrument resolved
+only to whole units. The decimal carried nothing, and someone at the
+cartwright eventually explained it anyway.
+
+A lot rejected at axle is held, not returned the same day. The cartwright
+learned that a same-day return loses the evidence of why the sets were
+rejected at axle in the first place.
+
+The sets are the unit of account because they can be counted without being
+moved. Everything else the cartwright tracks is derived from the sets, and
+each derivation is written down.
+
+The oldest holding of sets sets the review date, not the largest. Age is
+what turns a holding into a problem; volume decides only how large the
+sets problem will be.
+
+Work not finished by the end of the opening hour at the cartwright is
+raised, not carried quietly on. Carried quietly it surfaces at axle, where
+it costs a turn instead of an hour.
+
+Kept as a plain record of the sets. Written as a program it would give the
+roster's parsers something to read at the cartwright.

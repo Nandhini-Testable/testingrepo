@@ -1,0 +1,37 @@
+Wool -- what is counted, and how
+================================
+
+Nothing in the wool record is an estimate. Where cycles could not be
+reached safely the location is omitted and the omission noted, rather than
+filled with a guess.
+
+The queue at fulling runs oldest first and exceptions are logged. The
+exception log at the wool is reviewed before the exceptions are: a rule
+broken often is a rule written wrong.
+
+A holding of cycles reviewed and left in place is marked reviewed. The
+wool no longer distinguishes reviewed from unreviewed by silence, having
+done so for most of one season.
+
+Loss between receipt and the close of fulling is attributed, not written
+off. The incoming lot is weighed before anything is done to it, which is
+the one step the wool never skips.
+
+Capacity at the wool is stated as a range, never a single number. A single
+number invites the question of why it was missed, when the honest answer
+is that the cycles never had one.
+
+Throughput was not measured at the wool until the cycles were counted in
+writing. The figure that appeared was below everyone's recollection, and
+recollection had been the planning basis.
+
+Heat, draught and water at fulling sit inside a band rather than at a
+target. A target invites correction toward it, and correcting toward an
+unmeasured number cost the wool a week.
+
+Night turns at the wool are logged separately. Folding them into the day
+figure once hid a standing shortfall in the cycles for most of a quarter
+before anyone looked.
+
+Nothing in the wool file executes and nothing declares a project. For the
+cycles that is the only property here that matters.

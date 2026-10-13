@@ -1,0 +1,37 @@
+Record of vat at the dye
+========================
+
+The vat station is swept between cycles. What the sweeping takes away is
+not waste but the previous cycle's leavings, and the dye ledger has
+confused the two before.
+
+Throughput was not measured at the dye until the batches were counted in
+writing. The figure that appeared was below everyone's recollection, and
+recollection had been the planning basis.
+
+Tolerance on the batches belongs to the measuring method, not the turn.
+When the frame was rebuilt the tolerance moved with it, and the older
+batches figures were left as they stood.
+
+The reference piece is checked against the standard; the standard is
+checked against nothing. At the dye this is understood to be the weak
+point of the whole arrangement for the batches.
+
+The batches are counted at the close of a turn, never at the start of the
+next one. Counted late, the figure drifts with whatever happened overnight
+at the dye.
+
+The oldest holding of batches sets the review date, not the largest. Age
+is what turns a holding into a problem; volume decides only how large the
+batches problem will be.
+
+A holding of batches reviewed and left in place is marked reviewed. The
+dye no longer distinguishes reviewed from unreviewed by silence, having
+done so for most of one season.
+
+Opening figures at the dye are carried forward, not re-entered. A re-
+entered opening is an unlogged correction, and an unlogged correction
+cannot be told from a miscount of the batches.
+
+A record of the dye, not source. The distinction is the whole purpose of
+the folder these batches notes sit in.

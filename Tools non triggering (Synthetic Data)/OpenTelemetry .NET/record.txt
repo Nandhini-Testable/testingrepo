@@ -1,0 +1,33 @@
+Net -- what is counted, and how
+===============================
+
+Mending cannot be hurried and the net stopped trying. Rushing yields not a
+faster turn but a later one, because the gauges have to go back through
+mending.
+
+Conditions at mending are logged at the start and the end of a turn, never
+averaged across the middle. An average hides a net drifting steadily in
+one direction.
+
+A difference between the written figure and the physical count is carried
+as an open line, never absorbed. The net has closed lines three turns
+after they were raised, and the gauges were right.
+
+The gauges are the unit of account because they can be counted without
+being moved. Everything else the net tracks is derived from the gauges,
+and each derivation is written down.
+
+Who counted the gauges is recorded beside the count. Not to apportion
+blame at the net, but because two counters disagreeing is itself a
+measurement worth keeping.
+
+A holding of gauges reviewed and left in place is marked reviewed. The net
+no longer distinguishes reviewed from unreviewed by silence, having done
+so for most of one season.
+
+The queue at mending runs oldest first and exceptions are logged. The
+exception log at the net is reviewed before the exceptions are: a rule
+broken often is a rule written wrong.
+
+A record of the net, not source. The distinction is the whole purpose of
+the folder these gauges notes sit in.

@@ -1,0 +1,29 @@
+Notes kept at the rope on the counts
+====================================
+
+The reference piece is checked against the standard; the standard is
+checked against nothing. At the rope this is understood to be the weak
+point of the whole arrangement for the counts.
+
+Who counted the counts is recorded beside the count. Not to apportion
+blame at the rope, but because two counters disagreeing is itself a
+measurement worth keeping.
+
+The counts are counted at the close of a turn, never at the start of the
+next one. Counted late, the figure drifts with whatever happened overnight
+at the rope.
+
+Corrections are appended at the rope, never edited in place. The history
+of the counts figure reads as a sequence of decisions instead of one
+number that was always right.
+
+Conditions at walk are logged at the start and the end of a turn, never
+averaged across the middle. An average hides a rope drifting steadily in
+one direction.
+
+Tolerance on the counts belongs to the measuring method, not the turn.
+When the frame was rebuilt the tolerance moved with it, and the older
+counts figures were left as they stood.
+
+Nothing in the rope file executes and nothing declares a project. For the
+counts that is the only property here that matters.

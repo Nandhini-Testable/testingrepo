@@ -1,0 +1,28 @@
+# Machine-readable trigger for the evaluation harness.
+tool: Dolos
+slug: dolos
+kind: standalone
+status: not-installed
+target_framework: net5.0
+language_version: "9.0"
+runner: "Tool Triggering (Synthetic Data)/dolos/run.sh"
+expects:
+  exit_code: 4
+  reason: >-
+    Node, tree-sitter C# grammar. Class B, and the sheet's declaration ('C# language-version independent - source similarity, not tied to compiler') is correct. MEASURED, not assumed: @dodona/dolos 2.9.3 fails to install on this host because @dodona/dolos-parsers 1.4.1 needs node-gyp native compilation, which fails under node 22.22.2. That is exit 4 (absent from this host), not exit 3 (cannot run on this family) -- collapsing the two would let a missing binary masquerade as a .NET Framework result.
+metrics:
+  primary_for: 0
+  alternative_for: 7
+
+data:
+  folder: "Tool Triggering (Synthetic Data)/dolos"
+  planted: >-
+    a similarity pair with renamed identifiers and reordered statements, not a token copy
+  expected: >-
+    a reported similarity between SimilarSubmissionA and SimilarSubmissionB
+  language_version: "9.0"
+  note: >-
+    The C# core of this folder's fixtures is C# 5-compatible, so it is identical
+    on all 13 families and what the tool measures cannot drift between them. The
+    LanguageMarker class in each file is what pins the file to C# 9.0; it does not
+    compile under C# 8.0. No project manifest is present, by design.
