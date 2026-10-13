@@ -1,0 +1,16 @@
+# Testable wb-cpu-worker checkout install (Python 3.7–compatible pins).
+# When this file exists at repo root, the worker installs into .wb_py_deps before
+# pytest / py-all-defs-uses (beniget) / optional coverage-py — same contract as PY_V39 monolith branches.
+#
+# Pins match requirements-dev.txt markers that resolve on 3.7.17 (see dataset.json toolsActiveDetail).
+# Runtime pins (pip-audit / import paths) stay aligned with pyproject [project].dependencies.
+-r requirements-runtime.txt
+
+pytest==7.4.4
+beniget==0.5.0
+gast==0.7.0
+radon==6.0.1
+lizard==1.24.0
+# Latest coverage with 3.7 support (7.x requires >=3.10 on this corpus).
+coverage==6.5.0
+pytest-cov==4.1.0
