@@ -1,0 +1,33 @@
+Saltworks -- what is counted, and how
+=====================================
+
+A holding of pans reviewed and left in place is marked reviewed. The
+saltworks no longer distinguishes reviewed from unreviewed by silence,
+having done so for most of one season.
+
+Sequence matters more than date in the saltworks record. Each change to
+how the pans were handled made the next one legible, and none would have
+been noticed under the earlier practice.
+
+Conditions at evaporation are logged at the start and the end of a turn,
+never averaged across the middle. An average hides a saltworks drifting
+steadily in one direction.
+
+Night turns at the saltworks are logged separately. Folding them into the
+day figure once hid a standing shortfall in the pans for most of a quarter
+before anyone looked.
+
+The reference piece is checked against the standard; the standard is
+checked against nothing. At the saltworks this is understood to be the
+weak point of the whole arrangement for the pans.
+
+A difference between the written figure and the physical count is carried
+as an open line, never absorbed. The saltworks has closed lines three
+turns after they were raised, and the pans were right.
+
+A lot rejected at evaporation is held, not returned the same day. The
+saltworks learned that a same-day return loses the evidence of why the
+pans were rejected at evaporation in the first place.
+
+A record of the saltworks, not source. The distinction is the whole
+purpose of the folder these pans notes sit in.
