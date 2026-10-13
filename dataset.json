@@ -216,10 +216,10 @@
       "dir": "pydriller",
       "role": "primary",
       "block": "Code Churn",
-      "pin": "pydriller (pip)",
+      "pin": "git log (Node port of the PyDriller wrapper)",
       "status": "active",
       "measured": false,
-      "note": "PyDriller is a Python package invoked externally via a small wrapper script -- Node-version-independent by construction."
+      "note": "The PyDriller churn wrapper, ported from Python to Node (tools/pydriller/run_pydriller.js): it reads this branch's history with `git log --name-status` and needs only Node and git -- Node-version-independent by construction."
     },
     {
       "tool": "Git-Spark",

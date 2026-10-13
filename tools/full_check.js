@@ -63,7 +63,7 @@ if (exists('src') === exists('packages')) {
 
 check();
 for (const t of DATA.toolsActiveDetail || []) {
-  const entrypoint = path.join(ROOT, 'tools', t.dir, t.dir === 'pydriller' ? 'run_pydriller.py' : `run_${t.dir.replace(/-/g, '_')}.sh`);
+  const entrypoint = path.join(ROOT, 'tools', t.dir, t.dir === 'pydriller' ? 'run_pydriller.js' : `run_${t.dir.replace(/-/g, '_')}.sh`);
   if (!fs.existsSync(entrypoint)) {
     fail(`dataset.json declares tools/${t.dir} but its entrypoint is missing: ${path.relative(ROOT, entrypoint)}`);
   }

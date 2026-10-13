@@ -41,7 +41,7 @@ const WIRING = [
   { dir: "diff-cover", label: "diff-cover", role: "primary", entrypoint: "tools/diff-cover/run_diff_cover.sh" },
   { dir: "eslint-scope", label: "ESLint (eslint-scope)", role: "primary", entrypoint: "tools/eslint-scope/run_eslint_scope.sh" },
   { dir: "knip", label: "knip", role: "alternative", entrypoint: "tools/knip/run_knip.sh" },
-  { dir: "pydriller", label: "PyDriller", role: "primary", entrypoint: "tools/pydriller/run_pydriller.py" },
+  { dir: "pydriller", label: "PyDriller", role: "primary", entrypoint: "tools/pydriller/run_pydriller.js" },
   { dir: "git-spark", label: "Git-Spark", role: "alternative", entrypoint: "tools/git-spark/run_git_spark.sh" }
 ];
 
@@ -99,7 +99,7 @@ function runAll() {
   const ran = [], skipped = [], absent = [], failed = [], unexpected = [];
   for (const row of WIRING) {
     const entry = path.join(ROOT, row.entrypoint);
-    const cmd = entry.endsWith('.py') ? 'python3' : 'bash';
+    const cmd = entry.endsWith('.js') ? process.execPath : 'bash';
     console.log(`\n--- ${row.label} (${row.dir}) ---`);
     const result = spawnSync(cmd, [entry], { cwd: ROOT, stdio: 'inherit' });
     const rc = result.status === null ? 1 : result.status;
