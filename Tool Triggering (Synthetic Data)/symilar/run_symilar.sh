@@ -10,8 +10,7 @@ ROOT="$(cd "$HERE/../.." && pwd)"
 SRC="src"
 PKG="orderlab"
 
-require_python_floor "symilar" ">=3.10" "pylint==4.0.8"
-require_import "symilar" "pylint" "pylint==4.0.8"
+require_import "symilar" "pylint" "pylint==3.3.9"
 
 
 mkdir -p "$ROOT/reports"

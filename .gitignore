@@ -20,5 +20,7 @@ htmlcov/
 # (pymcdc needs >=3.10 and exits 3 before running), kept for uniformity.
 *.mdc
 reports/
+tools/
+.venv39/
 *.log
 .DS_Store

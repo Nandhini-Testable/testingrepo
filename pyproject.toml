@@ -1,4 +1,4 @@
-# orderlab -- branch PY-081
+# orderlab -- branch PY-081 (git: PY_V39_UV_PIP_MONC)
 # Build backend : uv_build 0.12.9
 # Package manager: pip 26.0.1
 # Interpreter    : CPython 3.9.23
@@ -43,15 +43,14 @@ orderlab = "orderlab.__main__:main"
 dev = [
     "pytest==8.4.2",
     "crosshair-tool==0.0.110 ; python_version >= '3.8'",
-    "coverage==7.16.0 ; python_version >= '3.10'",
-    "pymcdc==0.2.6 ; python_version >= '3.10'",
+    "coverage==7.10.7",
     "radon==6.0.1",
     "lizard==1.24.0",
-    "pytest-testmon==2.2.0 ; python_version >= '3.10'",
-    "pylint==4.0.8 ; python_version >= '3.10'",
-    "semgrep==1.176.0 ; python_version >= '3.10'",
-    "bandit==1.9.4 ; python_version >= '3.10'",
-    "pip-audit==2.10.1 ; python_version >= '3.10'",
+    "pytest-testmon==2.1.4",
+    "pylint==3.3.9",
+    "semgrep==1.72.0",
+    "bandit==1.8.6",
+    "pip-audit==2.7.3",
     "cosmic-ray==8.7.0 ; python_version >= '3.9'",
     "beniget==0.5.0 ; python_version >= '3.6'",
     "gast==0.7.0 ; python_version >= '3.6'",

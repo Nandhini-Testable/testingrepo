@@ -5,15 +5,15 @@ role: primary
 branch: PY-081
 python_version: "3.9"
 python_version_verified: "3.9.23"
-pin: coverage==7.16.0
-declared_floor: ">=3.10"
-status: inactive
+pin: coverage==7.10.7
+declared_floor: ">=3.9"
+status: active
 entrypoint: tools/coverage/run_coverage.sh
 outputs: reports/coverage.xml
 expects: >-
-  statement and branch coverage over $SRC/$PKG, with analysis/dead_code.py uncovered
-inactive_reason: >-
-  coverage 7.16.0 declares Requires-Python >=3.10; pip refuses the pin on 3.9.
-failure_mode: pip refuses the pin (Requires-Python)
+  statement and branch coverage over $SRC/$PKG, with analysis/dead_code.py uncovered;
+  reports/coverage-beniget.json combines Coverage.py with Beniget for All-Uses metrics
+note: >-
+  coverage 7.10.7 is the newest PyPI release admitting Python 3.9.23 on PY_V39_UV_PIP_MONC.
 skip_exit_code: 3          # cannot run on this interpreter
 missing_exit_code: 4       # binary absent from this host

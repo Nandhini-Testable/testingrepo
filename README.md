@@ -1,15 +1,16 @@
-﻿# orderlab -- PY_V39_UV_PIP_MONO
+﻿# orderlab -- PY_V39_UV_PIP_MONC
 
-Order-pricing domain used as a white-box tool-evaluation fixture. One branch of
-the Python 3.9 family: 24 branches across 3 build backends, 4 package managers
-and 2 architectures. The domain layer is byte-identical on every branch, so any
-difference in tool output is attributable to the branch variables alone.
+Order-pricing domain used as a white-box tool-evaluation fixture. This git branch
+is the **full-primary** Python 3.9.23 variant: every White Box metric primary
+named for Python can run here. Sibling `PY_V39_UV_PIP_MONO` keeps corpus-wide
+latest pins with intentional dark tools. Domain code is byte-identical across
+branches.
 
 ## Branch variables
 
 | Variable | This branch |
 |---|---|
-| Branch | `PY_V39_UV_PIP_MONO` |
+| Branch | `PY_V39_UV_PIP_MONC` |
 | Python | 3.9.23 |
 | Build backend | uv_build 0.12.9 |
 | Backend metadata | pyproject [project] |
@@ -25,88 +26,34 @@ difference in tool output is attributable to the branch variables alone.
 
 ## Supported tools
 
-29 tools are wired on this branch: 15 primary and 14 alternative, covering the
-103-metric white-box framework. **16 of them can run on Python 3.9;
-13 cannot.**
+29 tools are wired on this branch. **24 run on Python 3.9.23**; **5** remain dark
+because only releases requiring >=3.10 exist (`mutmut`, `diff-cover`, standalone
+`astroid`, `pyan3 + astroid`, `dulwich`). Primaries that the metrics sheet names
+for Python use the **newest pin that still supports 3.9** on this branch only.
 
-That is the measurement, not a defect. Every tool is pinned at its current
-latest release, identically on all 24 branches, and the pins that this
-interpreter excludes are guarded with an environment marker so they drop out of
-resolution instead of failing it. A tool that cannot run exits **3**, not 0 --
-a skip that looks like a pass is the failure mode this corpus exists to expose.
+Coverage runs pytest under Coverage.py, then writes `reports/coverage-beniget.json`
+(Beniget + coverage XML) for All-Uses metrics. Pymcdc is installed with
+`pip install --ignore-requires-python` and started via `tools/pymcdc/run_pymcdc.py`
+(the PyPI `-m pymcdc` entry uses `match`, which is 3.10+).
 
-### Running here
+See `dataset.json` for the full active/dark breakdown.
 
-| Tool | Role | Pin | Why |
-|---|---|---|---|
-| `CrossHair` | primary | `crosshair-tool==0.0.110` | crosshair-tool 0.0.110 declares >=3.8 but its real floor is 3.9. |
-| `Radon` | primary | `radon==6.0.1` | radon 6.0.1 declares no Requires-Python and imports cleanly on 3.8.. |
-| `Lizard` | primary | `lizard==1.24.0` | lizard 1.24.0 -- a silent import crash on the 3.6 family, working from 3.7 onward. |
-| `cognitive-ast` | primary | _binary / stdlib_ | Not a PyPI package -- no distribution of that name exists. |
-| `jscpd` | primary | `jscpd@5.1.1` | jscpd 5.1.1 is an npm package that runs on Node, not on the project interpreter, so the Python version is irrelevant to it. |
-| `cosmic-ray` | primary | `cosmic-ray==8.7.0` | cosmic-ray 8.7.0 declares >=3.9. |
-| `Beniget` | primary | `beniget==0.5.0` | beniget 0.5.0 declares >=3.6 and means it. |
-| `PyDriller` | primary | `pydriller==2.10` | pydriller 2.10 works. |
-| `Ruff` | alternative | `ruff==0.16.5` | ruff 0.16.5 -- alternative for 19 of the 103 metrics. |
-| `complexipy` | alternative | `complexipy==7.0.1` | complexipy 7.0.1 declares >=3.8. |
-| `Opengrep` | alternative | _binary / stdlib_ | Standalone binary with its own parser. |
-| `Opengrep (taint mode)` | alternative | _binary / stdlib_ | Same binary, taint mode. |
-| `Trivy` | alternative | _binary / stdlib_ | Standalone binary; scans manifests and lockfiles, never the interpreter. |
-| `SlipCover` | alternative | `slipcover==1.1.0` | slipcover 1.1.0 declares >=3.9,<3.15. |
-| `pylint + vulture` | alternative | `vulture==2.16` | vulture 2.16 declares >=3.9. |
-| `sys.settrace driver (stdlib)` | alternative | _binary / stdlib_ | stdlib sys.settrace driver, written 3.6-compatible.. |
-
-### Dark here
+### Dark here (>=3.10 only)
 
 | Tool | Role | Pin | Why |
 |---|---|---|---|
-| `Coverage.py` | primary | `coverage==7.16.0` | coverage 7.16.0 declares Requires-Python >=3.10; pip refuses the pin on 3.9.. |
-| `Pymcdc` | primary | `pymcdc==0.2.6` | pymcdc 0.2.6 declares Requires-Python >=3.10; pip refuses the pin on 3.9.. |
-| `testmon` | primary | `pytest-testmon==2.2.0` | pytest-testmon 2.2.0 declares Requires-Python >=3.10; pip refuses the pin on 3.9.. |
-| `pylint` | primary | `pylint==4.0.8` | pylint 4.0.8 declares Requires-Python >=3.10.0; pip refuses the pin on 3.9.. |
-| `Semgrep OSS` | primary | `semgrep==1.176.0` | semgrep 1.176.0 declares Requires-Python >=3.10; pip refuses the pin on 3.9.. |
-| `Bandit` | primary | `bandit==1.9.4` | bandit 1.9.4 declares Requires-Python >=3.10; pip refuses the pin on 3.9.. |
-| `pip-audit` | primary | `pip-audit==2.10.1` | pip-audit 2.10.1 declares Requires-Python >=3.10; pip refuses the pin on 3.9.. |
-| `symilar (pylint)` | alternative | `pylint==4.0.8` | symilar ships inside pylint 4.0.8 (Requires-Python >=3.10.0); pip refuses the pin on 3.9.. |
-| `mutmut` | alternative | `mutmut==3.7.0` | mutmut 3.7.0 declares Requires-Python >=3.10; pip refuses the pin on 3.9.. |
-| `diff-cover` | alternative | `diff-cover==10.5.1` | diff-cover 10.5.1 declares Requires-Python >=3.10; pip refuses the pin on 3.9.. |
-| `astroid` | alternative | `astroid==4.3.1` | astroid 4.3.1 declares Requires-Python >=3.10.0; pip refuses the pin on 3.9.. |
-| `pyan3 + astroid` | alternative | `pyan3==2.8.1` | pyan3 2.8.1 declares Requires-Python >=3.10,<3.16; pip refuses the pin on 3.9.. |
-| `dulwich` | alternative | `dulwich==1.2.14` | dulwich 1.2.14 declares Requires-Python >=3.10; pip refuses the pin on 3.9.. |
-
-**No tool on this branch lies about itself.** This is the first
-family in the corpus where every distribution that installs also imports, and
-every one that imports also runs when invoked. `crosshair-tool` declared
-`>=3.8` and needed 3.9; the claim and the behaviour agree from here on.
-
-### What moved since the earlier families
-
-| | 3.6 | 3.7 | 3.8 | 3.9 |
-|---|---|---|---|---|
-| Tools running | 5 | 7 | 12 | **16** |
-| Silent liars | 2 | 1 | 1 | **0** |
-| Branches that build | 12/24 | 12/24 | 22/24 | **24/24** |
-| PEP 621 `[project]` | 0 | 8 | 16 | **24** |
-
-- **All 24 branches build.** poetry-core 2.2.1 emits PEP 621,
-  so the poetry-core + uv pairing that failed on 3.8 now locks -- `uv lock`
-  resolves 78 packages. The build axis has finished converging.
-- **The PEP 621 column is unanimous** for the first time: 0 branches could
-  express `[project]` on 3.6, 8 on 3.7, 16 on 3.8, and 24 here.
-- **`crosshair`, `cosmic-ray`, `slipcover` and `vulture` arrive.** Mutation
-  Score gets a primary for the first time: 336 mutants, 336 killed, 0
-  surviving.
-- **No tool lies about its support.** crosshair declared `>=3.8` and needed
-  3.9; here the claim and the behaviour finally agree.
-- **Thirteen tools remain dark**, all declaring `>=3.10`, including Coverage.py
-  -- primary for 40 of the 103 metrics. The next family is not an increment.
+| `mutmut` | alternative | `mutmut==3.7.0` | mutmut 3.7.0 declares Requires-Python >=3.10. |
+| `diff-cover` | alternative | `diff-cover==10.5.1` | diff-cover 10.5.1 declares Requires-Python >=3.10. |
+| `astroid` | alternative | `astroid==4.3.1` | astroid 4.3.1 declares Requires-Python >=3.10.0. |
+| `pyan3 + astroid` | alternative | `pyan3==2.8.1` | pyan3 2.8.1 declares Requires-Python >=3.10,<3.16. |
+| `dulwich` | alternative | `dulwich==1.2.14` | dulwich 1.2.14 declares Requires-Python >=3.10. |
 
 
 ## Build
 
 ```
 make setup        # python -m pip install --upgrade 'pip==26.0.1'
-make install      # python -m pip install -e . -r requirements-dev.txt
+make install      # dev pins + pymcdc (--ignore-requires-python on 3.9)
 ```
 
 > Both the backend and the package manager on this branch run on Python 3.9.23 for real; the branch installs, locks and tests cleanly.
@@ -134,7 +81,7 @@ branch.
 ## Workspace layout
 
 ```
-python-corpus/  (PY_V39_UV_PIP_MONO)
+python-corpus/  (PY_V39_UV_PIP_MONC)
 |-- .github/  (1 files)
 |-- src/  (20 files)
 |-- tests/  (7 files)

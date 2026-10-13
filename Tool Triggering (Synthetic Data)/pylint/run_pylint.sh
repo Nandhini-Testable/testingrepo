@@ -10,15 +10,15 @@ ROOT="$(cd "$HERE/../.." && pwd)"
 SRC="src"
 PKG="orderlab"
 
-require_python_floor "pylint" ">=3.10" "pylint==4.0.8"
-require_import "pylint" "pylint" "pylint==4.0.8"
-require_smoke "pylint" "pylint==4.0.8" "$PYBIN" -m pylint --version
+require_import "pylint" "pylint" "pylint==3.3.9"
+require_smoke "pylint" "pylint==3.3.9" "$PYBIN" -m pylint --version
 
 
 mkdir -p "$ROOT/reports"
 cd "$ROOT"
 
 FINDINGS_EXIT=1   # non-zero from this tool means 'found something', not 'broke'
+FINDINGS_RC="30"  # pylint uses 30 when the JSON report was written with findings
 "$PYBIN" -m pylint --rcfile=tools/pylint/pylintrc "$SRC/$PKG" --output-format=json:reports/pylint.json,colorized
 rc=$?
 accept_findings "pylint" "$rc" "reports/pylint.json"

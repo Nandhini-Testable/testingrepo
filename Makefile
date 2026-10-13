@@ -22,6 +22,7 @@ setup:
 
 install:
 	python -m pip install -e . -r requirements-dev.txt
+	python -m pip install -r requirements-runtime.txt
 
 lock:
 	python -m pip install --no-deps -r requirements.lock

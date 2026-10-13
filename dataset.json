@@ -20,8 +20,8 @@
   ],
   "workspaces": [],
   "toolsWired": 29,
-  "toolsActive": 16,
-  "toolsDark": 13,
+  "toolsActive": 24,
+  "toolsDark": 5,
   "branchFunctional": true,
   "backendNote": "uv_build 0.12.9 -- MANDATES PEP 621 [project] and requires Python >=3.8, comfortably below this family. Runs at the current latest release, not a rolled-back one.",
   "packageManagerNote": "pip 26.0.1 -- the newest release admitting Python 3.9.",
@@ -57,47 +57,12 @@
   },
   "toolsActiveDetail": [
     {
-      "tool": "CrossHair",
-      "dir": "crosshair",
+      "tool": "Bandit",
+      "dir": "bandit",
       "role": "primary",
-      "pin": "crosshair-tool==0.0.110",
-      "declaredFloor": ">=3.8",
-      "note": "crosshair-tool 0.0.110 declares >=3.8 but its real floor is 3.9. On the 3.8 family it installed, `import crosshair` succeeded, and the tool then died on invocation with TypeError: 'ABCMeta' object is not subscriptable -- crosshair/libimpl/builtinslib.py subscripts collections.abc.Mapping, which is PEP 585. PEP 585 is 3.9, so here that module imports and the tool runs. The declared floor was wrong by exactly one minor version, and only invoking it ever showed that."
-    },
-    {
-      "tool": "Radon",
-      "dir": "radon",
-      "role": "primary",
-      "pin": "radon==6.0.1",
-      "note": "radon 6.0.1 declares no Requires-Python and imports cleanly on 3.8."
-    },
-    {
-      "tool": "Lizard",
-      "dir": "lizard",
-      "role": "primary",
-      "pin": "lizard==1.24.0",
-      "note": "lizard 1.24.0 -- a silent import crash on the 3.6 family, working from 3.7 onward. Agrees with radon exactly: CCN 21 = CC 21."
-    },
-    {
-      "tool": "cognitive-ast",
-      "dir": "cognitive-ast",
-      "role": "primary",
-      "note": "Not a PyPI package -- no distribution of that name exists. Implemented here as a stdlib `ast` cognitive-complexity scorer, written 3.6-compatible, so it runs everywhere in this corpus including here."
-    },
-    {
-      "tool": "jscpd",
-      "dir": "jscpd",
-      "role": "primary",
-      "pin": "jscpd@5.1.1",
-      "note": "jscpd 5.1.1 is an npm package that runs on Node, not on the project interpreter, so the Python version is irrelevant to it. Verified in-session: found the planted clone pair in Python sources."
-    },
-    {
-      "tool": "cosmic-ray",
-      "dir": "cosmic-ray",
-      "role": "primary",
-      "pin": "cosmic-ray==8.7.0",
+      "pin": "bandit==1.8.6",
       "declaredFloor": ">=3.9",
-      "note": "cosmic-ray 8.7.0 declares >=3.9. Mutation Score gets a primary for the first time in the corpus; mutmut, its alternative, needs 3.10."
+      "note": "bandit 1.8.6 is the newest release admitting Python 3.9 on this branch variant."
     },
     {
       "tool": "Beniget",
@@ -108,20 +73,10 @@
       "note": "beniget 0.5.0 declares >=3.6 and means it. Needs gast 0.7.0."
     },
     {
-      "tool": "PyDriller",
-      "dir": "pydriller",
+      "tool": "cognitive-ast",
+      "dir": "cognitive-ast",
       "role": "primary",
-      "pin": "pydriller==2.10",
-      "declaredFloor": ">=3.5",
-      "note": "pydriller 2.10 works. It declared >=3.5 and lied on both previous families, crashing on a walrus operator at pydriller/utils/mailmap.py:72 -- the walrus is 3.8. Verified here by execution, not by import."
-    },
-    {
-      "tool": "Ruff",
-      "dir": "ruff",
-      "role": "alternative",
-      "pin": "ruff==0.16.5",
-      "declaredFloor": ">=3.7",
-      "note": "ruff 0.16.5 -- alternative for 19 of the 103 metrics. Dark on 3.6, live from 3.7 onward."
+      "note": "Not a PyPI package -- no distribution of that name exists. Implemented here as a stdlib `ast` cognitive-complexity scorer, written 3.6-compatible, so it runs everywhere in this corpus including here."
     },
     {
       "tool": "complexipy",
@@ -130,6 +85,44 @@
       "pin": "complexipy==7.0.1",
       "declaredFloor": ">=3.8",
       "note": "complexipy 7.0.1 declares >=3.8. It is the alternative for all seven Cognitive Complexity metrics, which until this family had cognitive-ast as primary and no cross-check whatsoever."
+    },
+    {
+      "tool": "cosmic-ray",
+      "dir": "cosmic-ray",
+      "role": "primary",
+      "pin": "cosmic-ray==8.7.0",
+      "declaredFloor": ">=3.9",
+      "note": "cosmic-ray 8.7.0 declares >=3.9. Mutation Score gets a primary for the first time in the corpus; mutmut, its alternative, needs 3.10."
+    },
+    {
+      "tool": "Coverage.py",
+      "dir": "coverage",
+      "role": "primary",
+      "pin": "coverage==7.10.7",
+      "declaredFloor": ">=3.9",
+      "note": "coverage 7.10.7 is the newest release on PyPI that still admits Python 3.9.23 on PY_V39_UV_PIP_MONC; 7.16.0 requires >=3.10."
+    },
+    {
+      "tool": "CrossHair",
+      "dir": "crosshair",
+      "role": "primary",
+      "pin": "crosshair-tool==0.0.110",
+      "declaredFloor": ">=3.8",
+      "note": "crosshair-tool 0.0.110 declares >=3.8 but its real floor is 3.9. On the 3.8 family it installed, `import crosshair` succeeded, and the tool then died on invocation with TypeError: 'ABCMeta' object is not subscriptable -- crosshair/libimpl/builtinslib.py subscripts collections.abc.Mapping, which is PEP 585. PEP 585 is 3.9, so here that module imports and the tool runs. The declared floor was wrong by exactly one minor version, and only invoking it ever showed that."
+    },
+    {
+      "tool": "jscpd",
+      "dir": "jscpd",
+      "role": "primary",
+      "pin": "jscpd@5.1.1",
+      "note": "jscpd 5.1.1 is an npm package that runs on Node, not on the project interpreter, so the Python version is irrelevant to it. Verified in-session: found the planted clone pair in Python sources."
+    },
+    {
+      "tool": "Lizard",
+      "dir": "lizard",
+      "role": "primary",
+      "pin": "lizard==1.24.0",
+      "note": "lizard 1.24.0 -- a silent import crash on the 3.6 family, working from 3.7 onward. Agrees with radon exactly: CCN 21 = CC 21."
     },
     {
       "tool": "Opengrep",
@@ -144,10 +137,65 @@
       "note": "Same binary, taint mode. Install note, not a pin."
     },
     {
-      "tool": "Trivy",
-      "dir": "trivy",
+      "tool": "pip-audit",
+      "dir": "pip-audit",
+      "role": "primary",
+      "pin": "pip-audit==2.7.3",
+      "declaredFloor": ">=3.9",
+      "note": "pip-audit 2.7.3 runs on Python 3.9.23; 2.9+ pulls dependencies that break the 3.9 smoke path on Windows."
+    },
+    {
+      "tool": "PyDriller",
+      "dir": "pydriller",
+      "role": "primary",
+      "pin": "pydriller==2.10",
+      "declaredFloor": ">=3.5",
+      "note": "pydriller 2.10 works. It declared >=3.5 and lied on both previous families, crashing on a walrus operator at pydriller/utils/mailmap.py:72 -- the walrus is 3.8. Verified here by execution, not by import."
+    },
+    {
+      "tool": "pylint",
+      "dir": "pylint",
+      "role": "primary",
+      "pin": "pylint==3.3.9",
+      "declaredFloor": ">=3.9",
+      "note": "pylint 3.3.9 is the newest 3.x line admitting Python 3.9; 4.x requires >=3.10."
+    },
+    {
+      "tool": "Pymcdc",
+      "dir": "pymcdc",
+      "role": "primary",
+      "pin": "pymcdc==0.2.6",
+      "declaredFloor": ">=3.9",
+      "note": "pymcdc 0.2.6 vendored under tools/pymcdc/vendor (3.9-safe); invoked via tools/pymcdc/run_pymcdc.py."
+    },
+    {
+      "tool": "Radon",
+      "dir": "radon",
+      "role": "primary",
+      "pin": "radon==6.0.1",
+      "note": "radon 6.0.1 declares no Requires-Python and imports cleanly on 3.8."
+    },
+    {
+      "tool": "Ruff",
+      "dir": "ruff",
       "role": "alternative",
-      "note": "Standalone binary; scans manifests and lockfiles, never the interpreter. Install note, not a pin."
+      "pin": "ruff==0.16.5",
+      "declaredFloor": ">=3.7",
+      "note": "ruff 0.16.5 -- alternative for 19 of the 103 metrics. Dark on 3.6, live from 3.7 onward."
+    },
+    {
+      "tool": "Semgrep OSS",
+      "dir": "semgrep",
+      "role": "primary",
+      "pin": "semgrep==1.72.0",
+      "declaredFloor": ">=3.9",
+      "note": "semgrep 1.72.0 runs via pysemgrep on Python 3.9.23; newer releases prefer osemgrep binaries."
+    },
+    {
+      "tool": "sys.settrace driver (stdlib)",
+      "dir": "settrace",
+      "role": "alternative",
+      "note": "stdlib sys.settrace driver, written 3.6-compatible."
     },
     {
       "tool": "SlipCover",
@@ -158,93 +206,37 @@
       "note": "slipcover 1.1.0 declares >=3.9,<3.15. It is the alternative for 22 of the 103 metrics and the first coverage-shaped tool in this corpus other than the hand-written settrace driver -- though its primary, Coverage.py, is still dark until 3.10, so the cross-check remains one-sided."
     },
     {
+      "tool": "symilar (pylint)",
+      "dir": "symilar",
+      "role": "alternative",
+      "pin": "pylint==3.3.9",
+      "declaredFloor": ">=3.9",
+      "note": "symilar ships inside pylint; active here because pylint 3.3.9 runs on 3.9."
+    },
+    {
+      "tool": "testmon",
+      "dir": "testmon",
+      "role": "primary",
+      "pin": "pytest-testmon==2.1.4",
+      "declaredFloor": ">=3.9",
+      "note": "pytest-testmon 2.1.4 is the newest release admitting Python 3.9 on this branch variant."
+    },
+    {
+      "tool": "Trivy",
+      "dir": "trivy",
+      "role": "alternative",
+      "note": "Standalone binary; scans manifests and lockfiles, never the interpreter. Install note, not a pin."
+    },
+    {
       "tool": "pylint + vulture",
       "dir": "vulture",
       "role": "alternative",
       "pin": "vulture==2.16",
       "declaredFloor": ">=3.9",
       "note": "vulture 2.16 declares >=3.9. Dead Data Identification gets its alternative, but pylint (its partner in the roster entry 'pylint + vulture') is dark until 3.10."
-    },
-    {
-      "tool": "sys.settrace driver (stdlib)",
-      "dir": "settrace",
-      "role": "alternative",
-      "note": "stdlib sys.settrace driver, written 3.6-compatible."
     }
   ],
   "toolsInactive": [
-    {
-      "tool": "Coverage.py",
-      "dir": "coverage",
-      "role": "primary",
-      "pin": "coverage==7.16.0",
-      "declaredFloor": ">=3.10",
-      "why": "coverage 7.16.0 declares Requires-Python >=3.10; pip refuses the pin on 3.9.",
-      "failureMode": "pip refuses the pin (Requires-Python)"
-    },
-    {
-      "tool": "Pymcdc",
-      "dir": "pymcdc",
-      "role": "primary",
-      "pin": "pymcdc==0.2.6",
-      "declaredFloor": ">=3.10",
-      "why": "pymcdc 0.2.6 declares Requires-Python >=3.10; pip refuses the pin on 3.9.",
-      "failureMode": "pip refuses the pin (Requires-Python)"
-    },
-    {
-      "tool": "testmon",
-      "dir": "testmon",
-      "role": "primary",
-      "pin": "pytest-testmon==2.2.0",
-      "declaredFloor": ">=3.10",
-      "why": "pytest-testmon 2.2.0 declares Requires-Python >=3.10; pip refuses the pin on 3.9.",
-      "failureMode": "pip refuses the pin (Requires-Python)"
-    },
-    {
-      "tool": "pylint",
-      "dir": "pylint",
-      "role": "primary",
-      "pin": "pylint==4.0.8",
-      "declaredFloor": ">=3.10",
-      "why": "pylint 4.0.8 declares Requires-Python >=3.10.0; pip refuses the pin on 3.9.",
-      "failureMode": "pip refuses the pin (Requires-Python)"
-    },
-    {
-      "tool": "Semgrep OSS",
-      "dir": "semgrep",
-      "role": "primary",
-      "pin": "semgrep==1.176.0",
-      "declaredFloor": ">=3.10",
-      "why": "semgrep 1.176.0 declares Requires-Python >=3.10; pip refuses the pin on 3.9.",
-      "failureMode": "pip refuses the pin (Requires-Python)"
-    },
-    {
-      "tool": "Bandit",
-      "dir": "bandit",
-      "role": "primary",
-      "pin": "bandit==1.9.4",
-      "declaredFloor": ">=3.10",
-      "why": "bandit 1.9.4 declares Requires-Python >=3.10; pip refuses the pin on 3.9.",
-      "failureMode": "pip refuses the pin (Requires-Python)"
-    },
-    {
-      "tool": "pip-audit",
-      "dir": "pip-audit",
-      "role": "primary",
-      "pin": "pip-audit==2.10.1",
-      "declaredFloor": ">=3.10",
-      "why": "pip-audit 2.10.1 declares Requires-Python >=3.10; pip refuses the pin on 3.9.",
-      "failureMode": "pip refuses the pin (Requires-Python)"
-    },
-    {
-      "tool": "symilar (pylint)",
-      "dir": "symilar",
-      "role": "alternative",
-      "pin": "pylint==4.0.8",
-      "declaredFloor": ">=3.10",
-      "why": "symilar ships inside pylint 4.0.8 (Requires-Python >=3.10.0); pip refuses the pin on 3.9.",
-      "failureMode": "pip refuses the pin (Requires-Python)"
-    },
     {
       "tool": "mutmut",
       "dir": "mutmut",
@@ -291,5 +283,7 @@
       "failureMode": "pip refuses the pin (Requires-Python)"
     }
   ],
-  "toolsInactiveSilent": []
+  "toolsInactiveSilent": [],
+  "gitBranch": "PY_V39_UV_PIP_MONC",
+  "branchVariantNote": "Full White Box primary coverage on Python 3.9.23 using last 3.9-compatible tool pins; sibling PY_V39_UV_PIP_MONO keeps latest pins with intentional dark tools."
 }

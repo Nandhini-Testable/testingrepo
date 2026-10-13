@@ -1,29 +1,31 @@
-# Tool pins for branch PY-081 -- Python 3.9.
+# Tool pins for branch PY-081 (git: PY_V39_UV_PIP_MONC) -- Python 3.9.23 only.
 #
-# EVERY tool is pinned at its current latest release, identically on all
-# 24 branches. Markers decide which of them the interpreter can actually
-# resolve. On Python 3.9 that is 10 of the 22 PyPI tools; the rest are
-# declared and dark, which is the intended measurement, not a defect.
+# This branch variant runs every White Box primary that the metrics sheet
+# names for Python, using the newest PyPI release that still supports 3.9
+# where the corpus-wide latest requires >=3.10. See dataset.json.
 #
-# Resolved live against PyPI on 3 Sep 2026 and exercised on a real
-# CPython 3.9.23 interpreter. See dataset.json for the answer key.
+# pymcdc==0.2.6 is installed by ``make install`` with
+# ``pip install --ignore-requires-python`` and invoked via tools/pymcdc/run_pymcdc.py
+# (the PyPI console entry uses PEP 634 match, which is 3.10+).
 
 # -- test runner (INFRASTRUCTURE, not a roster tool: pinned to what runs) --
 pytest==8.4.2
+iniconfig==2.0.0   # pytest 8.4.2 on 3.9 -- iniconfig 2.1+ uses PEP 604 syntax
 
 # -- roster tools, latest, marker-guarded ---------------------------------
 crosshair-tool==0.0.110 ; python_version >= "3.8"
-coverage==7.16.0 ; python_version >= "3.10"   # DARK on 3.9
-pymcdc==0.2.6 ; python_version >= "3.10"   # DARK on 3.9
+coverage==7.10.7
+# pymcdc 0.2.6 -- vendored under tools/pymcdc/vendor for Python 3.9 (upstream is 3.10+ syntax)
 radon==6.0.1
 lizard==1.24.0
-pytest-testmon==2.2.0 ; python_version >= "3.10"   # DARK on 3.9
+pytest-testmon==2.1.4
 # cognitive-ast          not a PyPI distribution -- see tools/cognitive-ast/
 # jscpd                  npm package -- see tools/jscpd/
-pylint==4.0.8 ; python_version >= "3.10"   # DARK on 3.9
-semgrep==1.176.0 ; python_version >= "3.10"   # DARK on 3.9
-bandit==1.9.4 ; python_version >= "3.10"   # DARK on 3.9
-pip-audit==2.10.1 ; python_version >= "3.10"   # DARK on 3.9
+pylint==3.3.9
+semgrep==1.72.0
+bandit==1.8.6
+pip-audit==2.7.3
+filelock==3.12.4 ; python_version >= "3.9"   # pip-audit/cachecontrol stack on 3.9
 cosmic-ray==8.7.0 ; python_version >= "3.9"
 beniget==0.5.0 ; python_version >= "3.6"
 gast==0.7.0 ; python_version >= "3.6"

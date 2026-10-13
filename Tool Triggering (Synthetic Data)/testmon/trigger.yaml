@@ -5,15 +5,13 @@ role: primary
 branch: PY-081
 python_version: "3.9"
 python_version_verified: "3.9.23"
-pin: pytest-testmon==2.2.0
-declared_floor: ">=3.10"
-status: inactive
+pin: pytest-testmon==2.1.4
+declared_floor: ">=3.9"
+status: active
 entrypoint: tools/testmon/run_testmon.sh
 outputs: reports/testmon.txt
 expects: >-
   a selected subset of tests after a change to pricing_rules.py
-inactive_reason: >-
   pytest-testmon 2.2.0 declares Requires-Python >=3.10; pip refuses the pin on 3.9.
-failure_mode: pip refuses the pin (Requires-Python)
 skip_exit_code: 3          # cannot run on this interpreter
 missing_exit_code: 4       # binary absent from this host

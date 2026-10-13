@@ -10,9 +10,8 @@ ROOT="$(cd "$HERE/../.." && pwd)"
 SRC="src"
 PKG="orderlab"
 
-require_python_floor "bandit" ">=3.10" "bandit==1.9.4"
-require_import "bandit" "bandit" "bandit==1.9.4"
-require_smoke "bandit" "bandit==1.9.4" "$PYBIN" -m bandit --version
+require_import "bandit" "bandit" "bandit==1.8.6"
+require_smoke "bandit" "bandit==1.8.6" "$PYBIN" -m bandit --version
 
 
 mkdir -p "$ROOT/reports"

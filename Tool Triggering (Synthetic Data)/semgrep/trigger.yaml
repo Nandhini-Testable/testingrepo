@@ -5,15 +5,13 @@ role: primary
 branch: PY-081
 python_version: "3.9"
 python_version_verified: "3.9.23"
-pin: semgrep==1.176.0
-declared_floor: ">=3.10"
-status: inactive
+pin: semgrep==1.72.0
+declared_floor: ">=3.9"
+status: active
 entrypoint: tools/semgrep/run_semgrep.sh
 outputs: reports/semgrep.json
 expects: >-
   the eleven planted issues in analysis/sast_fixture.py
-inactive_reason: >-
   semgrep 1.176.0 declares Requires-Python >=3.10; pip refuses the pin on 3.9.
-failure_mode: pip refuses the pin (Requires-Python)
 skip_exit_code: 3          # cannot run on this interpreter
 missing_exit_code: 4       # binary absent from this host

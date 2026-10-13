@@ -10,9 +10,8 @@ ROOT="$(cd "$HERE/../.." && pwd)"
 SRC="src"
 PKG="orderlab"
 
-require_python_floor "pip-audit" ">=3.10" "pip-audit==2.10.1"
-require_import "pip-audit" "pip_audit" "pip-audit==2.10.1"
-require_smoke "pip-audit" "pip-audit==2.10.1" "$PYBIN" -m pip_audit --version
+require_import "pip-audit" "pip_audit" "pip-audit==2.7.3"
+require_smoke "pip-audit" "pip-audit==2.7.3" "$PYBIN" -m pip_audit --version
 
 
 mkdir -p "$ROOT/reports"

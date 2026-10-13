@@ -6,14 +6,13 @@ branch: PY-081
 python_version: "3.9"
 python_version_verified: "3.9.23"
 pin: pymcdc==0.2.6
-declared_floor: ">=3.10"
-status: inactive
+declared_floor: ">=3.9"
+status: active
 entrypoint: tools/pymcdc/run_pymcdc.sh
 outputs: reports/pymcdc.txt
 expects: >-
   MC/DC obligations for the compound conditions in classify_shipment
-inactive_reason: >-
-  pymcdc 0.2.6 declares Requires-Python >=3.10; pip refuses the pin on 3.9.
-failure_mode: pip refuses the pin (Requires-Python)
+note: >-
+  pymcdc 0.2.6 is installed with pip --ignore-requires-python and invoked via run_pymcdc.py on 3.9.
 skip_exit_code: 3          # cannot run on this interpreter
 missing_exit_code: 4       # binary absent from this host

@@ -10,8 +10,7 @@ ROOT="$(cd "$HERE/../.." && pwd)"
 SRC="src"
 PKG="orderlab"
 
-require_python_floor "testmon" ">=3.10" "pytest-testmon==2.2.0"
-require_import "testmon" "testmon" "pytest-testmon==2.2.0"
+require_import "testmon" "testmon" "pytest-testmon==2.1.4"
 
 
 mkdir -p "$ROOT/reports"
