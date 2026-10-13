@@ -187,7 +187,7 @@
       "kind": "sdk",
       "status": "active",
       "expectedExitCode": 0,
-      "reason": "dotnet-stryker 4.0.0 is pinned in .config/dotnet-tools.json and mutates this family: it restores the solution, mutates the library, runs the tests against each mutant and writes a mutation report. Also: the sheet makes it primary for 16 Data Flow metrics, which it cannot compute -- see roslyn-dataflow."
+      "reason": "Stryker.NET 4.0.0 runs as the host's installed `dotnet stryker` and mutates this family: it restores the solution, mutates the library, runs the tests against each mutant and writes a mutation report. It is deliberately absent from .config/dotnet-tools.json: an entry there makes `dotnet stryker` demand `dotnet tool restore` and stop, instead of running the installed tool. Also: the sheet makes it primary for 16 Data Flow metrics, which it cannot compute -- see roslyn-dataflow."
     },
     {
       "tool": "OpenTelemetry (.NET) + OTLP exporter",
@@ -271,14 +271,14 @@
       "OpenTelemetry.Exporter.OpenTelemetryProtocol": "1.19.1"
     },
     "dotnetTools": {
-      "dotnet-stryker": "4.0.0",
       "altcover.global": "8.8.173"
     },
     "scanningHost": {
       "lizard": "1.17.10",
       "jscpd": "4.0.5",
       "semgrep": "1.50.0",
-      "pydriller": "2.7"
+      "pydriller": "2.7",
+      "dotnet-stryker": "4.0.0"
     }
   }
 }
