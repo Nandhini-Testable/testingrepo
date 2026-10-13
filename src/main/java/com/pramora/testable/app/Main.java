@@ -9,7 +9,7 @@ import com.pramora.testable.service.DiscountPolicy;
 import com.pramora.testable.service.PricingService;
 import com.pramora.testable.util.InputSanitizer;
 
-/** Entry point. Prices one order supplied on the command line. */
+/** Entry point. Prices one order supplied on the command line (reference defaults to O-DEMO). */
 public final class Main {
 
     private Main() {
