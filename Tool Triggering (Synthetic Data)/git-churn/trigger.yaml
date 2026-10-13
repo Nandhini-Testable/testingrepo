@@ -1,0 +1,28 @@
+# Machine-readable trigger for the evaluation harness.
+tool: git log --numstat
+slug: git-churn
+kind: standalone
+status: active
+target_framework: net6.0
+language_version: "10.0"
+runner: "Tool Triggering (Synthetic Data)/git-churn/run.sh"
+expects:
+  exit_code: 0
+  reason: >-
+    stdlib git. Class C. Counts Co-authored-by trailers, not just the author field -- the TypeScript corpus's ownership metric was wrong, not missing, for exactly this reason.
+metrics:
+  primary_for: 0
+  alternative_for: 0
+
+data:
+  folder: "Tool Triggering (Synthetic Data)/git-churn"
+  planted: >-
+    nothing in source -- its input is this branch's commit graph
+  expected: >-
+    contributors == 4 and a non-empty per-file churn table
+  language_version: "10.0"
+  note: >-
+    The C# core of this folder's fixtures is C# 5-compatible, so it is identical
+    on all 13 families and what the tool measures cannot drift between them. The
+    LanguageMarker class in each file is what pins the file to C# 10.0; it does not
+    compile under C# 9.0. No project manifest is present, by design.

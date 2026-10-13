@@ -1,0 +1,46 @@
+# Opengrep reads Semgrep's rule format; these are the same three planted flows
+# the semgrep folder asserts, kept here so this folder is self-contained and can
+# be run without reaching into a sibling.
+#
+# Rule 1 carries the same correction as the semgrep folder's copy: the shipped
+# form `string.Format("SELECT $...ANY", $...ARGS)` never matched, because
+# metavariables are not interpolated inside a string literal.
+#
+# NOTE ON THE SHEET: the tool list declares Opengrep as "C# 12+". That inverts the
+# hazard. Opengrep matches through a tree-sitter C# grammar, which has no language
+# FLOOR at all -- it has a construct set. The risk therefore runs toward NEWER
+# syntax the grammar has not learned yet, not toward older syntax. On this corpus
+# the fixture core is C# 5-compatible, so the only construct that can trouble a
+# grammar is this family's language marker.
+rules:
+  - id: orderkit-tainted-query
+    languages: [csharp]
+    severity: WARNING
+    message: >-
+      Untrusted public parameter reaches a query string without sanitisation.
+      Planted flow 2, mirrored from InputSanitizer.BuildQuery.
+    patterns:
+      - pattern: string.Format($FMT, $...ARGS)
+      - metavariable-regex:
+          metavariable: $FMT
+          regex: '(?i)^"\s*SELECT\b'
+
+  - id: orderkit-tainted-command
+    languages: [csharp]
+    severity: WARNING
+    message: >-
+      Untrusted collection element reaches command assembly. Planted flow 4,
+      mirrored from InputSanitizer.BuildCommand.
+    patterns:
+      - pattern-inside: |
+          public static string BuildCommand(...) { ... }
+      - pattern: $SB.Append($ARG)
+
+  - id: orderkit-tainted-path
+    languages: [csharp]
+    severity: WARNING
+    message: >-
+      Untrusted public parameter reaches path assembly. Planted flow 3, mirrored
+      from InputSanitizer.BuildReportPath.
+    patterns:
+      - pattern: $ROOT.TrimEnd('/') + "/" + $NAME

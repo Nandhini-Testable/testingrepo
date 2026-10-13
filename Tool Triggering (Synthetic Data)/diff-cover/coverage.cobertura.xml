@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- A sample Cobertura report so diff-cover has something to READ in this folder.
+     diff-cover is Class C: it consumes a coverage report and a git diff, and never
+     touches the source language. On every family of this corpus no real report can
+     be produced (no test framework restores), so the tool exits 3, meaning it cannot
+     run here. This file is the fixture that makes the exit-3 measurement distinguishable
+     from "the folder had no input at all".
+
+     Target framework net6.0, C# 10.0. Line 14 of ChangedLines.cs is recorded uncovered on
+     purpose, so a correct read reports partial coverage rather than 0% or 100%. -->
+<coverage line-rate="0.75" branch-rate="0.5" version="1.9" timestamp="0"
+          lines-covered="3" lines-valid="4" branches-covered="1" branches-valid="2">
+  <sources>
+    <source>.</source>
+  </sources>
+  <packages>
+    <package name="OrderKit.ToolData" line-rate="0.75" branch-rate="0.5" complexity="3">
+      <classes>
+        <class name="OrderKit.ToolData.ChangedLines" filename="ChangedLines.cs"
+               line-rate="0.75" branch-rate="0.5" complexity="3">
+          <methods>
+            <method name="Reprice" signature="(System.Int64,System.Boolean)"
+                    line-rate="0.75" branch-rate="0.5" complexity="3">
+              <lines>
+                <line number="11" hits="4" branch="false" />
+                <line number="12" hits="4" branch="true" condition-coverage="50% (1/2)" />
+                <line number="13" hits="4" branch="false" />
+                <line number="14" hits="0" branch="false" />
+              </lines>
+            </method>
+          </methods>
+        </class>
+      </classes>
+    </package>
+  </packages>
+</coverage>

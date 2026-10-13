@@ -1,0 +1,8 @@
+# Byte-exact checkouts on every machine.
+#
+# The synthetic corpora are LF. The upstream test data under
+# "Tool Triggering (Tool Github Test data)" is copied byte-for-byte from the
+# tools' own repositories and some of its fixtures carry CRLF on purpose.
+# `-text` disables end-of-line conversion in both directions, so a checkout
+# reproduces exactly what is stored, on Windows and Linux alike.
+* -text

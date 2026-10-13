@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+# diff-cover
+set -uo pipefail
+# Paths are derived from this script's OWN location, so nothing here hardcodes the
+# name of the containing folder. The folder was renamed from `tools` to
+# `Tool Triggering (Synthetic Data)` and a hardcoded name would have to be edited
+# on 312 branches the next time it changes. Quoted throughout: the folder name
+# contains spaces and parentheses.
+TOOL_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+TOOLS_ROOT="$(cd "$TOOL_DIR/.." && pwd)"
+REPO_ROOT="$(cd "$TOOLS_ROOT/.." && pwd)"
+# Exported so the inline python blocks and any child process see them. Without
+# the export, running a runner directly failed with KeyError: 'REPO_ROOT'; it
+# only ever worked because tool_integration.py injected REPO_ROOT into the
+# environment itself.
+export TOOL_DIR TOOLS_ROOT REPO_ROOT
+. "$TOOLS_ROOT/_skip.sh"
+
+# --- why this tool has the status it has on this family -------------------
+# Class C: reads Cobertura/OpenCover XML. No coverage report can be produced on this family, so it has nothing to read.
+skip "Class C: reads Cobertura/OpenCover XML"
+
+
+require_cmd diff-cover
+# Reads this folder's sample Cobertura report. On every family of this corpus
+# no real report can be produced, which is why the verdict above is exit 3.
+diff-cover "$TOOL_DIR/coverage.cobertura.xml" \
+     --json-report "$(report_dir)/diff-cover.json"
+accept_findings $? || exit 1
+exit 0

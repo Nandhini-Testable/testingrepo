@@ -1,0 +1,28 @@
+# Machine-readable trigger for the evaluation harness.
+tool: Semgrep
+slug: semgrep
+kind: standalone
+status: active
+target_framework: net6.0
+language_version: "10.0"
+runner: "Tool Triggering (Synthetic Data)/semgrep/run.sh"
+expects:
+  exit_code: 0
+  reason: >-
+    Python, tree-sitter C# grammar. Class B.
+metrics:
+  primary_for: 7
+  alternative_for: 0
+
+data:
+  folder: "Tool Triggering (Synthetic Data)/semgrep"
+  planted: >-
+    one method per rule in this folder's rules.yml
+  expected: >-
+    all 3 rules fire (orderkit-tainted-query, -command, -path); 5 findings in total, because -command matches once per Append
+  language_version: "10.0"
+  note: >-
+    The C# core of this folder's fixtures is C# 5-compatible, so it is identical
+    on all 13 families and what the tool measures cannot drift between them. The
+    LanguageMarker class in each file is what pins the file to C# 10.0; it does not
+    compile under C# 9.0. No project manifest is present, by design.

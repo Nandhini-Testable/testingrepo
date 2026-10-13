@@ -1,0 +1,64 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "version": 1,
+  "metadata": {
+    "component": {
+      "type": "library",
+      "name": "OrderKit",
+      "version": "1.0.0",
+      "purl": "pkg:nuget/OrderKit@1.0.0"
+    },
+    "properties": [
+      {
+        "name": "orderkit:targetFramework",
+        "value": "net6.0"
+      },
+      {
+        "name": "orderkit:languageVersion",
+        "value": "10.0"
+      },
+      {
+        "name": "orderkit:why-sbom",
+        "value": "An SBOM, not a project manifest. A .csproj or a lockfile here would make the platform treat this folder as its own project and run the whole tool roster against it."
+      }
+    ]
+  },
+  "components": [
+    {
+      "type": "library",
+      "name": "Newtonsoft.Json",
+      "version": "9.0.1",
+      "purl": "pkg:nuget/Newtonsoft.Json@9.0.1",
+      "description": "deserialisation gadget advisories"
+    },
+    {
+      "type": "library",
+      "name": "System.Net.Http",
+      "version": "4.3.0",
+      "purl": "pkg:nuget/System.Net.Http@4.3.0",
+      "description": "multiple advisories on the 4.3.x line"
+    },
+    {
+      "type": "library",
+      "name": "Microsoft.AspNet.Mvc",
+      "version": "5.2.3",
+      "purl": "pkg:nuget/Microsoft.AspNet.Mvc@5.2.3",
+      "description": "XSS advisory"
+    },
+    {
+      "type": "library",
+      "name": "System.Text.RegularExpressions",
+      "version": "4.3.0",
+      "purl": "pkg:nuget/System.Text.RegularExpressions@4.3.0",
+      "description": "ReDoS advisory"
+    },
+    {
+      "type": "library",
+      "name": "BouncyCastle",
+      "version": "1.8.1",
+      "purl": "pkg:nuget/BouncyCastle@1.8.1",
+      "description": "multiple crypto advisories"
+    }
+  ]
+}

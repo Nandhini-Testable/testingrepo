@@ -1,0 +1,34 @@
+{
+  "note": "Not a manifest. The audit's real input is the branch's own root manifest; this file records what a correct run should find there.",
+  "targetFramework": "net6.0",
+  "expectedVulnerablePackages": 5,
+  "packages": [
+    {
+      "id": "Newtonsoft.Json",
+      "version": "9.0.1",
+      "why": "deserialisation gadget advisories"
+    },
+    {
+      "id": "System.Net.Http",
+      "version": "4.3.0",
+      "why": "multiple advisories on the 4.3.x line"
+    },
+    {
+      "id": "Microsoft.AspNet.Mvc",
+      "version": "5.2.3",
+      "why": "XSS advisory"
+    },
+    {
+      "id": "System.Text.RegularExpressions",
+      "version": "4.3.0",
+      "why": "ReDoS advisory"
+    },
+    {
+      "id": "BouncyCastle",
+      "version": "1.8.1",
+      "why": "multiple crypto advisories"
+    }
+  ],
+  "advisoryCountsRecorded": false,
+  "whyNotRecorded": "Advisory counts must be read live from NuGet metadata at evaluation time. A recalled count is exactly the kind of researched-looking claim this corpus was built to distrust."
+}

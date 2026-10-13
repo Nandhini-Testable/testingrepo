@@ -1,0 +1,28 @@
+# Machine-readable trigger for the evaluation harness.
+tool: unilyze
+slug: unilyze
+kind: standalone
+status: active
+target_framework: net6.0
+language_version: "10.0"
+runner: "Tool Triggering (Synthetic Data)/unilyze/run.sh"
+expects:
+  exit_code: 0
+  reason: >-
+    REPAIRED. unilyze is a real, actively maintained C# static analyzer (github.com/bigdra50/unilyze, MIT, v0.6.1) -- the "not a tool" finding was wrong. Whoever checked only searched PyPI (an unrelated Unicode-info package of the same name) and npm (404); the real tool is on NuGet (package `Unilyze`) and ships self-contained binaries on GitHub Releases, neither of which was checked. Verified by actually downloading and running v0.6.1 against this corpus's own domain code: it reports real per-method cyclomaticComplexity and cognitiveComplexity, and its peak findings match dataset.json's planted fixtures exactly (OrderKit.PricingService.PriceCents for cyclomatic, OrderKit.RiskScorer.Score for cognitive) on both this family and the net45 floor family. ``unilyze hotspot`` computes real git-churn x complexity via git log, a genuine alternative to pydriller for Code Churn. It is Class B -- its own Roslyn-based syntax walk needs no restore or build -- so the TFM is irrelevant to it, like Lizard/jscpd/Semgrep. Installed here from its GitHub Release binary, which this host's egress proxy does not block, unlike the NuGet-gated dotnet-tool channel every other analyzer here is stuck behind. It remains NOT a legitimate alternative for All Definition Coverage or All Uses Coverage (16 of the original 34 metrics): its own metric catalogue -- complexity, Halstead, cohesion, coupling, maintainability, churn -- has no def-use or data-flow analysis of any kind, so those 16 metrics are unaffected by this repair and stay exactly as broken as the roster defects doc already says -- see roslyn-dataflow.
+metrics:
+  primary_for: 0
+  alternative_for: 18
+
+data:
+  folder: "Tool Triggering (Synthetic Data)/unilyze"
+  planted: >-
+    a four-level nested method, charged for depth as well as branches
+  expected: >-
+    a per-member cyclomaticComplexity and cognitiveComplexity peak on CognitiveHotspot.Score
+  language_version: "10.0"
+  note: >-
+    The C# core of this folder's fixtures is C# 5-compatible, so it is identical
+    on all 13 families and what the tool measures cannot drift between them. The
+    LanguageMarker class in each file is what pins the file to C# 10.0; it does not
+    compile under C# 9.0. No project manifest is present, by design.

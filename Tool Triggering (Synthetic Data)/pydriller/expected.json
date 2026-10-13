@@ -1,0 +1,10 @@
+{
+  "tool": "pydriller",
+  "input": "this branch's commit graph -- no source fixture exists or should",
+  "expect": {
+    "commitsGreaterThan": 0,
+    "contributors": 4,
+    "countsCoAuthoredByTrailers": true
+  },
+  "why": "The TypeScript corpus's ownership metric was WRONG rather than missing, because its parser split each record on the first newline and never saw the Co-authored-by trailers."
+}
