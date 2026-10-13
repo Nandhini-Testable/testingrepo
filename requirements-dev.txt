@@ -4,9 +4,11 @@
 # names for Python, using the newest PyPI release that still supports 3.9
 # where the corpus-wide latest requires >=3.10. See dataset.json.
 #
-# pymcdc==0.2.6 is installed by ``make install`` with
-# ``pip install --ignore-requires-python`` and invoked via tools/pymcdc/run_pymcdc.py
-# (the PyPI console entry uses PEP 634 match, which is 3.10+).
+# Install with:  make install   or   bash scripts/install_dev_deps.sh
+# (semgrep and complexipy 7.x need a two-step tomli reconcile on 3.9.)
+#
+# pymcdc 0.2.6 — editable install from tools/pymcdc/vendor (PyPI uses match/case, 3.10+).
+-e "Tool Triggering (Synthetic Data)/pymcdc/vendor"
 
 # -- test runner (INFRASTRUCTURE, not a roster tool: pinned to what runs) --
 pytest==8.4.2

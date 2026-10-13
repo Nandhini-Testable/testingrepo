@@ -51,6 +51,7 @@ dev = [
     "semgrep==1.72.0",
     "bandit==1.8.6",
     "pip-audit==2.7.3",
+    "filelock==3.12.4 ; python_version >= '3.9'",
     "cosmic-ray==8.7.0 ; python_version >= '3.9'",
     "beniget==0.5.0 ; python_version >= '3.6'",
     "gast==0.7.0 ; python_version >= '3.6'",

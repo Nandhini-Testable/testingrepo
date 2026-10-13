@@ -19,7 +19,7 @@ mkdir -p "$ROOT/reports"
 cd "$ROOT"
 
 FINDINGS_EXIT=1   # non-zero from this tool means 'found something', not 'broke'
-npx --yes jscpd@5.1.1 --config tools/jscpd/.jscpd.json .
+npx --yes jscpd@5.1.1 --config tools/jscpd/.jscpd.json "$SRC"
 rc=$?
 accept_findings "jscpd" "$rc" "reports/jscpd/jscpd-report.json"
 exit $?

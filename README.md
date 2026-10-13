@@ -53,7 +53,7 @@ See `dataset.json` for the full active/dark breakdown.
 
 ```
 make setup        # python -m pip install --upgrade 'pip==26.0.1'
-make install      # dev pins + pymcdc (--ignore-requires-python on 3.9)
+make install      # dev pins via scripts/install_dev_deps.sh (pymcdc vendor + tomli reconcile)
 ```
 
 > Both the backend and the package manager on this branch run on Python 3.9.23 for real; the branch installs, locks and tests cleanly.

@@ -1,0 +1,18 @@
+# Vendored pymcdc 0.2.6 — Python 3.9 patches for branch PY_V39_UV_PIP_MONC only.
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pymcdc"
+version = "0.2.6"
+description = "Modified Condition/Decision Coverage analyzer (vendored, 3.9-safe)"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+
+[project.scripts]
+pymcdc = "pymcdc.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["pymcdc*"]

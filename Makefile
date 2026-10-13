@@ -21,8 +21,7 @@ setup:
 	python -m pip install --upgrade 'pip==26.0.1'
 
 install:
-	python -m pip install -e . -r requirements-dev.txt
-	python -m pip install -r requirements-runtime.txt
+	bash scripts/install_dev_deps.sh
 
 lock:
 	python -m pip install --no-deps -r requirements.lock
