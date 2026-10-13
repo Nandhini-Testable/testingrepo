@@ -1,0 +1,29 @@
+Thatch bundling -- working record
+=================================
+
+When the rates were reported to one decimal place the instrument resolved
+only to whole units. The decimal carried nothing, and someone at the
+thatch eventually explained it anyway.
+
+The rates are the unit of account because they can be counted without
+being moved. Everything else the thatch tracks is derived from the rates,
+and each derivation is written down.
+
+The rates are counted at the close of a turn, never at the start of the
+next one. Counted late, the figure drifts with whatever happened overnight
+at the thatch.
+
+Throughput was not measured at the thatch until the rates were counted in
+writing. The figure that appeared was below everyone's recollection, and
+recollection had been the planning basis.
+
+Counting moved to the end of the cycle after the rates figure was disputed
+twice in a month. The dispute ended; the disagreement about what the
+thatch was for did not.
+
+Bundling sets the pace of everything. Stations upstream can be worked
+harder without moving the daily figure, so a rising queue at bundling is
+read as information rather than fault.
+
+Kept as a plain record of the rates. Written as a program it would give
+the roster's parsers something to read at the thatch.

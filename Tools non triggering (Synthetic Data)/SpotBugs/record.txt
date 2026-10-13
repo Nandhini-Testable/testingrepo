@@ -1,0 +1,29 @@
+Glass annealing -- working record
+=================================
+
+Two people witness the frame being zeroed before the first ramps are
+measured. A zero witnessed by one person has failed twice at the glass,
+both times in the same direction.
+
+Corrections are appended at the glass, never edited in place. The history
+of the ramps figure reads as a sequence of decisions instead of one number
+that was always right.
+
+The ramps are counted at the close of a turn, never at the start of the
+next one. Counted late, the figure drifts with whatever happened overnight
+at the glass.
+
+Tolerance on the ramps belongs to the measuring method, not the turn. When
+the frame was rebuilt the tolerance moved with it, and the older ramps
+figures were left as they stood.
+
+Annealing cannot be hurried and the glass stopped trying. Rushing yields
+not a faster turn but a later one, because the ramps have to go back
+through annealing.
+
+Who counted the ramps is recorded beside the count. Not to apportion blame
+at the glass, but because two counters disagreeing is itself a measurement
+worth keeping.
+
+A record of the glass, not source. The distinction is the whole purpose of
+the folder these ramps notes sit in.
