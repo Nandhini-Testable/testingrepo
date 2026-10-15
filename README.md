@@ -224,3 +224,6 @@ no task to a run.
 
 See `Tools non triggering (Synthetic Data)/README.md` for the per-tool table, the mechanism each tool is
 inert by, and what was measured.
+
+
+Run note: README touched (no code change) so the next platform run is a new commit that can use the previous run as its Coverage Delta baseline.
