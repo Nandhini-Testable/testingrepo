@@ -43,5 +43,8 @@ def pong(depth):
 
 
 def fan_out(values):
-    """One caller, three callees -- a fan-out of 3 for coupling metrics."""
+    """One caller, three callees -- a fan-out of 3 for coupling metrics.
+
+    Also a live .py edit so pydriller's 90-day window has domain churn.
+    """
     return [entry_point(v) for v in values], ping(4), stage_three(0)
