@@ -23,6 +23,14 @@ import sys
 
 import pytest
 
+# Family lock stays in this file. Cosmic-ray skips mutation unless the
+# unmutated suite is green; the Testable worker is 3.12, so these
+# assertions must not fail the suite there. They still run on 3.14.
+pytestmark = pytest.mark.skipif(
+    sys.version_info[:2] != (3, 14),
+    reason="PY_V314 family lock; skip on Testable worker interpreters",
+)
+
 
 def test_interpreter_is_python_314():
     # Feature version only: 3.14.0rc2 and 3.14.0 final must both satisfy this.

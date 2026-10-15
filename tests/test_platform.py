@@ -13,17 +13,25 @@ here so the guard cannot rot.
 """
 import pytest
 
-pytest.importorskip("requests")
-pytest.importorskip("jinja2")
-pytest.importorskip("urllib3")
-pytest.importorskip("cryptography")
-pytest.importorskip("paramiko")
-pytest.importorskip("six")   # paramiko 2.4.1 imports six without declaring it
+# Do not use pytest.importorskip at import time. pymcdc exec()s this
+# file outside pytest; a Skipped exception becomes NO_INDEPENDENCE.
+# Coverage-py installs planted pins into .wb_py_deps; pymcdc does not.
+_PLANTED = ("requests", "jinja2", "urllib3", "cryptography", "paramiko", "six")
+_MISSING = []
+for _name in _PLANTED:
+    try:
+        __import__(_name)
+    except ImportError:
+        _MISSING.append(_name)
 
-from orderlab.platform.integrations import (           # noqa: E402
-    dependency_versions,
-    render_invoice,
-)
+if not _MISSING:
+    from orderlab.platform.integrations import (           # noqa: E402
+        dependency_versions,
+        render_invoice,
+    )
+else:
+    dependency_versions = None
+    render_invoice = None
 
 # Generated from the branch's own planted set, never hand-written. The 3.10
 # family had to move two of these pins -- urllib3 for a tool's transitive floor
@@ -39,11 +47,15 @@ EXPECTED = {
 
 
 def test_every_planted_pin_is_imported_and_reports_its_version():
+    if _MISSING:
+        pytest.skip("planted deps not in this process: {0}".format(", ".join(_MISSING)))
     resolved = dependency_versions()
     assert sorted(resolved) == sorted(EXPECTED)
 
 
 def test_resolved_versions_match_the_manifest_pins():
+    if _MISSING:
+        pytest.skip("planted deps not in this process: {0}".format(", ".join(_MISSING)))
     resolved = dependency_versions()
     mismatched = {name: (resolved[name], want)
                   for name, want in EXPECTED.items()
@@ -53,5 +65,7 @@ def test_resolved_versions_match_the_manifest_pins():
 
 
 def test_invoice_template_renders():
+    if _MISSING:
+        pytest.skip("planted deps not in this process: {0}".format(", ".join(_MISSING)))
     text = render_invoice("A-1", "US", 123.45, 2)
     assert "A-1" in text and "123.45" in text
