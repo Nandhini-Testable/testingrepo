@@ -74,7 +74,7 @@ from "the scan never ran".
 | Coverlet | active | coverlet.collector 6.0.0 is referenced by the test project, so `dotnet test --collect` p |
 | AltCover | active | altcover.global 8.8.173 is pinned in .config/dotnet-tools.json. It instruments the built |
 | MiniCover | skipped | MiniCover 3.10.0 declares .NET SDK 8.0/9.0/10.0 only -- verified against its own MiniCov |
-| Stryker.NET | active | dotnet-stryker 4.0.0 is pinned in .config/dotnet-tools.json and mutates this family: it  |
+| Stryker.NET | active | Stryker.NET 4.0.0 runs as the host's installed `dotnet stryker` and mutates this family: |
 | OpenTelemetry (.NET) + OTLP exporter | skipped | OpenTelemetry 1.19.1 and its OTLP exporter are restored into the test project, and Traci |
 | unilyze | absent | NOT A TOOL. The only package of this name anywhere is PyPI `unilyze` 0.2.1, 'Get detaile |
 
@@ -91,7 +91,7 @@ Tool pins follow the C# sheet of the Whitebox Tools Registry. `dataset.json`
 | SecurityCodeScan.VS2019 | 5.6.7 | the project files |
 | OpenTelemetry + OTLP exporter | 1.19.1 | the project files |
 | AltCover (`altcover.global`) | 8.8.173 | `.config/dotnet-tools.json` |
-| Stryker.NET (`dotnet-stryker`) | 4.0.0 | `.config/dotnet-tools.json` |
+| Stryker.NET (`dotnet-stryker`) | 4.0.0 | scanning host (installed tool) |
 | Lizard | 1.17.10 | scanning host |
 | jscpd | 4.0.5 | scanning host |
 | Semgrep | 1.50.0 | scanning host |
