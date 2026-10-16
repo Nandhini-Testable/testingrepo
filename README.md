@@ -19,8 +19,6 @@ difference in tool output is attributable to the branch variables alone.
 | Source root | `packages/domain/src` |
 | Branch usable | yes |
 
-> **Testable whitebox admission.** The catalog parser ceiling is still 3.13, so this branch no longer pins `==3.14.0rc2` in `.python-version` / `requires-python`. The declared range is `>=3.10,<3.14` so coverage-py, py-all-defs-uses (Beniget) and pydriller can be planned. Root `requirements.txt` lets coverage-py install deps without `uv_build`.
-
 > **Build backend.** uv_build 0.12.9 -- MANDATES PEP 621 [project] and requires Python >=3.8, comfortably below this family. Runs at the current latest release, not a rolled-back one.
 
 > **Package manager.** poetry 2.4.2 -- the current latest release. On the 2.x line it reads and writes PEP 621 [project]; the [tool.poetry] table it still accepts is a compatibility path, not the source of truth.

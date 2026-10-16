@@ -19,11 +19,7 @@ name = "orderlab"
 version = "1.0.0"
 description = "Order pricing domain used as a white-box tool-evaluation fixture"
 readme = "README.md"
-# Testable catalog parserCompatibility.maximum is 3.13. An exact 3.14.0rc2
-# pin makes every Python tool INCOMPATIBLE (not planned). A range contained
-# in 3.8–3.13 lets the planner admit coverage-py, py-all-defs-uses (beniget)
-# and pydriller onto 3.12/3.13 workers. Family identity stays PY_V314.
-requires-python = ">=3.10,<3.14"
+requires-python = "==3.14.0rc2"
 license = { text = "MIT" }
 authors = [{ name = "Prajith Kumaravel", email = "prajith.k19022003@gmail.com" }]
 classifiers = [
