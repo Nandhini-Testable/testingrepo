@@ -1,4 +1,4 @@
-# orderlab -- PY_V314_UV_POETRY_MICRO
+﻿# orderlab -- PY_V314_UV_POETRY_MICRO
 
 Order-pricing domain used as a white-box tool-evaluation fixture. One branch of
 the Python 3.14 family: 24 branches across 3 build backends, 4 package managers
@@ -19,7 +19,7 @@ difference in tool output is attributable to the branch variables alone.
 | Source root | `packages/domain/src` |
 | Branch usable | yes |
 
-> **Testable whitebox admission.** The catalog parser ceiling for pylint / bandit / cognitive-ast / python-perf-dependency is **3.12** (coverage-py / Beniget / pydriller are 3.13). A declared range that includes 3.13 is rejected. `requires-python` is `>=3.10,<3.13` so those tools can be planned on the 3.12 worker. Family identity stays PY_V314. Root `requirements.txt` lets coverage-py install deps without `uv_build`. `tests/test_runtime_env.py` skips unless the interpreter is 3.14 so cosmic-ray's unmutated baseline can be green on the worker.
+> **Testable whitebox admission.** The catalog parser ceiling is still 3.13, so this branch no longer pins `==3.14.0rc2` in `.python-version` / `requires-python`. The declared range is `>=3.10,<3.14` so coverage-py, py-all-defs-uses (Beniget) and pydriller can be planned. Root `requirements.txt` lets coverage-py install deps without `uv_build`.
 
 > **Build backend.** uv_build 0.12.9 -- MANDATES PEP 621 [project] and requires Python >=3.8, comfortably below this family. Runs at the current latest release, not a rolled-back one.
 
